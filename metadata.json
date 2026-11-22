@@ -1,0 +1,6 @@
+{
+  "name": "Axocomp Neurology",
+  "description": "Workers' comp and personal injury neurology in Tennessee. Diagnostics, documentation and disposition from neurologists, plus a plain-language guide for injured workers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

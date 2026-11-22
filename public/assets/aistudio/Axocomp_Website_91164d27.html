@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axocomp Website</title>
+<meta name="description" content="Axocomp: workers' comp and personal injury neurology in Tennessee. Diagnostics, documentation and disposition from neurologists, plus a plain-language guide for injured workers.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%23E8590C%22/%3E%3Cpath%20d%3D%22M40.42%2073.17Q35.90%2073.17%2032.76%2071.43Q29.62%2069.70%2028.00%2066.79Q26.38%2063.89%2026.38%2060.38Q26.38%2057.45%2027.28%2055.04Q28.18%2052.62%2030.19%2050.76Q32.19%2048.91%2035.59%2047.66Q37.93%2046.81%2041.16%2046.14Q44.40%2045.48%2048.50%2044.88Q52.59%2044.27%2057.50%2043.53L53.68%2045.64Q53.68%2041.89%2051.89%2040.14Q50.09%2038.38%2045.88%2038.38Q43.54%2038.38%2041.01%2039.51Q38.47%2040.64%2037.46%2043.53L27.87%2040.49Q29.46%2035.26%2033.87%2031.99Q38.28%2028.71%2045.88%2028.71Q51.46%2028.71%2055.79%2030.43Q60.12%2032.14%2062.34%2036.35Q63.59%2038.69%2063.82%2041.03Q64.06%2043.37%2064.06%2046.26V72.00H54.78V63.34L56.10%2065.14Q53.02%2069.39%2049.45%2071.28Q45.88%2073.17%2040.42%2073.17ZM42.69%2064.82Q45.61%2064.82%2047.62%2063.79Q49.63%2062.76%2050.82%2061.43Q52.01%2060.11%2052.44%2059.21Q53.25%2057.49%2053.39%2055.21Q53.53%2052.93%2053.53%2051.41L56.65%2052.19Q51.93%2052.97%2049.00%2053.49Q46.08%2054.02%2044.28%2054.45Q42.49%2054.88%2041.12%2055.39Q39.56%2056.01%2038.61%2056.73Q37.65%2057.45%2037.21%2058.31Q36.76%2059.17%2036.76%2060.22Q36.76%2061.66%2037.48%2062.70Q38.20%2063.73%2039.53%2064.28Q40.85%2064.82%2042.69%2064.82Z%22%20fill%3D%22%231C1C1C%22/%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2268%22%20r%3D%226%22%20fill%3D%22%23F4F4F2%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAQAElEQVR4AexdCWBU1bn+zp0ksyZBEBIWZVXQIIsgVbDvVWtb9am4sAStG89irS3VPisuRXB5Ki5P0fbZYqkblVCsira22rrUBQVEFkHAAlEEMgGEZPZkltNzBiYNIclsZyb33vknOXPvPct//vP935z573/vPaOhC1/uS22D3FMdE+unOa6tq3bNdVe7fuOe5nylrtq5yl3t3Ome5uKU9IdB3TTnV3EbCVtJm0nbSRu6qx0XSJt2IaWQV0LzudDqp9lPc09z3ifSBvCibdC0lzm0XzOGOWCYAbDzGWNjwVhf0EuXCDCwfnEbCVtB2IwJ20kbgmnLpE2lbd3Vznvrha2lzfM5iJwT2n05nPVT7RfXVzufcm92uTksywF2i0hVoJdJEWBVYOxWaWtpc/c05+/qq+0XSS7kesA5I/SeyXDVTXPdibAgsWb5I2fsKsbQM9cDIvn6QuCgzdnVnFleRMRVJ92TvRegNFdaKic0n4wS8Ym8IWpxbWfAHWBw5Up5kms4BEoFwedEHK5t7mrXTMkV1SNQRmjpK+2Z5rzSXeT8HGCPCMVpNoaeXvrRJc4Nhvn1FucW4YpeLrmjSjslhHaLs9v6zc51MbCnGVh/VcqRHJMjwNgA4Yo+W7/FudY91XGeitFmRWg+A8XCvVgEeXbL2HAVCpGMQkSAnSSiXa+KcOAzklPZIJAxoRsno3u9x/UOwC4DvQgBBQiIb/cr3F7XW56L0CNTcRkReu9k69CgxblanPCNz7RjakcItIcAA04P2Fwr900tOaG98mR5aRPaXe38drSoeCWE/5NMOJUTAhkiMCjCSj6sn+r8brrt0yJ0vbhELTp4XaQykUzzTwPRIQIM5ZzhNRG3vj4d7VImdH21fTwHe1zMzJZ0OqC6hEDGCDBmYYw/Uj/FPiFVGSkR+uvL7P1isLwMsGLQixDIKwKsOKZZXpIcTKXbpISWlynDMe1VRpetU8GT6uQAAcm95qj2Cr8KtmTiOyU0B1jE6VwqNqNAL0KgCxFgjI2uDzmflpzsTI1OCV1f7byPgX2vMwFURgjkDQHGpkpOdtZfh4Sum+aqAmOzOmtMZYRA3hFgbJZ7qmt4R/12SGiAP9xRI8onBLoSAa7xhzrqv11C75nmPJtcjY4go/yuRkByU3K0PT2OIDSfCy3G8WB7lSmPENALAjHggfZ0OYLQ7s3OK0B3zrWHFeXpCgF2kvClq9uqdBih+TmwMmBO20p0XAAIGHGIjN8rOdta9cMIXd/NeaOYnQe0rkD7hIBuEWBsoODsda31ayG0vCIIsFtBL0LAWAjc8vVlaLlZroXQ3OmUN4C0FBhrTKRt4SLAKqIxZ8t9+S2EjoFdWLig0MiNjEBr7rYQGuAXGHlQpHsBI8D5+YnRxwntnmo/FWC9Qa/2EKA8vSPAWJ+DHMahte2YRu6G3o1G+nWKAGeWs2UFTb5xxojQEghKhkWAgR8kdF21bQADhhp2JKQ4IXAQgXF7v+/orWlMo5v3DwJC70ZGgDEWi+IbGjgqjTwO0p0QaEFAcFmLQcuc0C2SaIcQ6HoEJJc1EX+meze63hakgQIEGEOlBvGmQBaJIAS6HgHpcjDx1vWakAaEgAoEOM3QKmAkGfpAgAtvQ+Mc3UAvQiAJAoYoFt6GxhizGkJZUpIQSIKA5LKWpA4VEwKGQoAIbShzkbLJECBCJ0OIyg2FABHaUOYiZZMhQIROhlDScqqgJwSI0HqyBumSNQJE6KwhJAF6QoAIrSdrkC5ZI0CEzhpCEqAnBIjQerIG6ZI1AjkldNba6VSALwLsawJ2Bhm2+hg2ei1Y3WDBRo+GLwIa9oQAv6ijU/VNrRYROol513ssWLyrBLducuD8laUY+143fOvDbjh7ZTdc+HE5qteU48q1pbj201Jcua4Mk1aX4dxV3fCfoo6se+4Kkb/GiZs/s+OhrTa8WFeCbX6WpFcqzhQBInQb5Nwhhme+suLqtc44eaevK8XD2x34274S1DVZ2tROfrinWczcvmK89bUVNXU23LvVgamflOOM5WWYucER72uXmOmTS6IaqSBAhBYoHQgzLN1dgv8WJD5vVTke/8KOT725/Y1Rb1TD8gMl8b4mipl+yupSPFZrwxYfmUSYJOP/gkZP+rmPbrfh3BVlmLfNgXU5JnFnVtoesODZnTZctqYMP1rvFD55UWfVqawDBAqW0C/XFeMC4RMv2mVDmOvLp13ZWCx8chcuX+PCZ15DmKgDeuU/u+DQ2u7XUL3ahXu2OtEYTd8nzqeJNvmKcMXaMizZlVv3J59jynVfBUXotY0WXC1O8rYGjPV1/uB2J27f7EAomms6GF9+wRD69b3F8a9xf1Rf7kWqFHp9bwmu3+BCOJZqi8KsVxCEfuILq5jhnIjqzFdOl3LrPEWYtcmJGE+3ZeHUNz2hn/zSioVf2U1j0Xf3F+Oef5pnPKoNY2pCf7C/CL/ZYVONWXryclD7lXorXnXTiWJ70JqW0PKeilvE1zNgTJ8ZSV6P1trhjZhzbEmG3mmxKQnNhY8pfc1gzLwGb4xoeLyWllRpy25TEvoldwm2iStvbQdrtuMX3TZ8TpfKDzOr6Qgtv4YfE1/Hh43SxAeLdtIs3dq8piP0/FobfAaNNbc2TKr7Mj7dGDava5UqDol6XUnohA7KtvuaGV4W7oYygQYQFBUnvS/UlRhA0/yoaCpCL4uTOfez1cjSMH54bBB3DfVjwUleLBvbiI+/2YA3T23AS2Ma8cwoLx46wYdrRZ3vHN2M7sW5vbz3RyJ0y6fFhIRuGZvSnVFlYfxsUACvjWvEwlF+XNO/Cef2CuPkblH0tYuwiuitXISGj3FwVJVG8a2jI/iBqHPfCQG8caoH9w/zo8oVFrXU/8cfIvDq+0Yr9aNuX6JpCL3ygAW7M3iipH1Y/p1bVRrB86M9+O1IPy7t24xe1oPk/XeN1PbO6hnGU6N8uKJfKLUGadaSzzWm2cSU1U1DaHn1TLWFbh7kF+6DD8e71LgMGmOYOTCE24YEVKuKLT6aoSWopiH0zIFBzBocwPijmuW4skpWFsOvhnsxpW9uXISLezfjkkq1M/UmXRM6K3Ok1dg0hJauwOQ+zXhseADvjW/AA8N8OK9XE7oVpT+73jAohG8cFU0LyHQr3yj6cFoyc1/a66u+SWsvu+DyTImCXXz7ntkzgrlDg+KErBG/HeGN+64D7MkXyxhTHoH8YOSaCTah48W9m5R144kwuq1UoGlKQotxtfxLv3VUeTTuu74w1hcPsf10YAAni6iFhiNnyFty4N+2KNNmR4b02mRlfMhFPNqb/POasXyjNDQ9odsaQobYLu/XjAUiavG3UxvjseRv92iGQ4thbHkYAx3puyht+0j1eJg42XQodDs8dMUQBUfo1mQrF3FjGUued2IA707w4K7j/a2Lc76viWtAo8U3haqOQgZ/IkcFDgVN6LYA9srDswByTbxVDRb8YVcxFnxpQ0NEnQmac3se2xYuXR6rQ1OXw+s6pb4KMHzwtQXP7SzB3Z/bMX2tE99aXhZfE++6T0vxwHYnFuywYaNX3RPoEZqhC9vlyJbu+5sZPtxvwZLdJfi/bTbM3ODERatc8TXxLlpdjp9+Vor5tQ4sq7divbcYvmhu54+IODHMdkxGb59bhI2OTiv9G8QJ1/v7i7BwhxU3bnTElw/77opy/GRjKR7c5sDzu21YfqAYX4XUzbituk9ptznKU6pn5kpE6A6su9Wv4QUx887ebI/Pumd9VI4bNrrwxJd2vLe/BHua9QcduRwglyPBZ6+4yr2srhg/E7Pvf3xQhupPynC/mHn/stfapbNuQr9UtjQ/65rQqZgwuzqBCCAXbbz+UyfO+Kgb7t7qxLti9g3E9Df7ZjfSwmldkJaTobPHam04d2VZfNHGFQ0iIG0Cm8un3U0wjKyGUFCElmt1zN1ix/mryuNrMec66pCVZahxRggUBKFD4uz/wa02TPq4FH/aY4Xe1oPOyHLUqF0ETE/oDR5L/ARvSZ24DMhYuyBQpnkQMC2hZUx2/nYbrl7nws6QxTwWM+NIFI7JlIQORoGr1pXiuV028AK6ekZfQDBnHPqmz5z43N91V+wUTjhpiaIohwkJPWeLA2YJw6XFZqocR8BULoe8z+LPewp3FSF5f3XcqgX8ZhpCb/Oz+H0WerVlb2s0/kS6XJfjjuP8eHqkF++e1oAJCp5ST4yZJ3YKeGsaQj+5Qz8/0zDEEcXEiibcPDiAZ0Z68P74Brw6zht/Il2uy3FBZRjDy6JwCDc/1PnCkgVMzcyGbgpCb/Nr+Pu+rnE15JPk5/Rsxg0DA3hyhDdO3poxXsw+PogpfZpRVRaDfMK7I/METbwoe0djzmW+KQi9cIe4aJJLlFrJHuKI4PK+ITx6og//EC6DfJL87mEBfL9fM0aXRzslbysxLbu+SMsu7ShAwPCElnfMvZHj2dmuxTC1TxNqTvagZowPPx0Uwuk9InAKlyFbG3gVPlOYrS5maG94Qq9uVMCqDixZVhTDjGNDeG2cBz8fHMQQp9olDpqFuAMKCU1xaBPEoVccUE9oSWS5/vMrp3gwo38IpTm6u7Q2YPj5pIOpoOuyjYvoIcxUX0QZ6ozgBXFSd03/JrjUf1YOaX1wsyNoePgPDkRH74ZGdG8TUBtUd+PRIBFuWyjiw91LeF5M9Emj2qmf7uUwuMtRq/in2+S6zTYLywuZo+Iz89e9aglNPjSMfXOSV+E6F8OEqyEXdcwLm0UncvUkinAIIBT/G9rl8IXVofEdcXFEnbTkkv5Ur/73BcnlMPgM7VF42fg4ZzQ5CxXVWNtowV/3qr+yaVaXIx3YDT1DBxW6HD3ydCLoEd8qd2xxpGOjlOvS3XYGn6FlvDhlayepuCcPP+kQEyeCszY5c/JrXXJ4Ur7cFnIy9Azd2xpTZrvdIaZMVkeCHt5uxyrFobqO+irUfEMTukIhod/Yp/4kLUEqGaL7xWYHluzOXR+JvjLdsqN6w3LSmSg+42qUnH09isZdCG3AKEBTF+fPVLd02hma0L1t6mbodZ4ivLVX/aVB+cCuXGY3FyeBbQ2ddpTDUozis34Axz3vw/nAathnLoL10v9FySW3w/aD/4fj9tfgnL8JthlPQOtxTNvudHlsaELLn5SwasIxVQTt3H86sdWvDpJ39hWh+pPSHD7jePjA04lyaH2Oh+POt2Gdeie0ikGHC2p1xGwuFJ0yUZD+PRR/99pWJfrcVWe9LhpfX4WzdECEAa9b78J6T3Zfs1t9LL74+U2bXNiVxzVBUp2hLUNPg33Wsk6JfIQ5i0pgnTwH1kmzjyjSU4bhCT2uXMTBFCIqb+ecvq4UszfbUZvG3XCNQo2lu0tw+RoXqteUxxc/V6iWMlGse1/hQvwGzFGekczi710n3JRrMmqbj0aGJ3SufiRTrgs9eXUZJq4qxbytdvx+Zwle21OMjw5Y8Na+YnGCV4Jf1loxuJ+KWwAACJxJREFUZ4sd165z4tsfdcO8bQ5s8qn3w1MlAktWscQO+48WgpUdnaxmp+VylrYcf2qndbqq0PCE7u+I4RTFs3RrY0iXYWmdFY/UOnDHFid+vKEUN4tYsvwZiqd32vHnPVas9hS3btJl+8nOJopPmwyt/4js9RMnkyUX3Zq9nBxIMDyhJSaT+jTLTcGnZCeFJedcrwwjy5BTYBl2ujJ5qgSZgtBn9AijR/HhITxVAJlFjnZMFZji0FvR2PN0B48pCC3vYZh+bEh34Kaj0Jjy7B//7izKYRk8Nh11UqprGTIupXr5rGQKQkvApvRuRlVp9qSQsvKdZhwbxPcU3L7amcshoxuqx8VKe6gWmbU80xBazk53Dw2giCU7NcoaM6UCruwXwoz+TUpltieMOcray84qj9nVy8xKIdHYNIQWY8Gx9hjuEaQGjEHqaX2a8JOB+XGVeMAjIVKaeFC9zGwVNBWhJRhn9Qzj5sFBuavbZBEfuJ8NCuB/8qgn9+xRjgdvVC8zAyUPa2I6QsvRTRFhvNnHBcAEceSxnpLLwvHrET5c2je/ocbY9k+UwxDdvlq5zGwFmpLQEpSJlc14tMqPEh351Gf2aMLSMY2Qa+BJHfOZooLQvLFeaZeRNa8rladCmGkJLcGZ0D2CP4zxQBJJHndV6lUSEx8uHx44MYie1q7SAmh+9RFlncsPSHTj28rkqRJkakJLkPrZeZxIC07y4hvdwjIrb6m7uNjz4wFBvCA+VKeLD1dnHSe9D6OzxofKZKTn0G67m/C7ixDbtbndsnQzm2tmp9skL/VNT+gEiid3i+JXJ/nx4lhPfCXRcks0UaR8O7osjLuH+vHGqR5cdUxTfGHzZJ0MdUUwQ1wcyibJKE+n/fAYgg9dkh2poxGEHr8C0do1nXbVVYUFQ+gEwNLociXRN8d7sXCEF1f0DeJEQaZEebpb+YBBlSuMy/qEML/Kh/fGN+DJkX6c0yu9b4MTS2OY0V/GpDNPAxxtLv+3MxjuO4Dgw5MFITM4SQw3IfjLKxFZ//d2JOsjq+AI3Rr2keVRzBzUhGdH+/DxNxvwu5Fe3CTCaXJBc/mTEtL3lnfyTTgqjLOObsaFlU1x4v6ofxAPDPNBzvYfTGjEM6P9uHFwCNJnt2f3bEBr9XK2z71fI/TwFIT/8RwQTi0OHt26CsFHqhHd8HbO9FIhuKAJ3RbAEWVRVItwmlzQXP6khDyJe2KEH/OH+3H/CQH84rhgnLjTj23CmT0j8Qs5bWUY5Zg3BdC0aBb8N41G6Pe3tTtjc99+hN9+CoG7voPgvImI/nOF7odHhNa9iXKrIA80IvLO0wjeex581w9GYM4ZYv+/4kT33zgcTc/fjthXG3OrhELpRGiFYBpeVHMQsd1bxGy9Bqpj1vnChgidL6Spn7wgUKiEzgu41En+ESBC5x9z6jGHCBChcwguic4/AkTo/GNOPeYQASJ0DsEl0flHQBCaq72nMP9joB4JgUMI8HoNHO5DRwc39E4IGBUBwWWNMyK0Ue1HerdFgH1BMzToZRoExOQsfGj2hWkGRAMpaAS4dDk0xMiHLmgamGfwkssaxDRtniHRSNJBwHR1BZc1zYIV4GKyNt3oaEAFhYDgMIuwj7SeiwJ1YuDrRaJ/QsDICKzstdTv1g6N4K+HtrQhBAyJAAeLc/ggoXnsZUOOgpQmBA4hwHj034SuXBL8CJzvPlRGG0LAYAjwujiHhdYHZ2ixA8ZelRtKEgFKxkKAvZLQt4XQGji5HQlUaGsoBFpzt4XQPUv9b4rIR36XxDQUbKSsThHwSO4mdGshNFuAMGOYkyigLSFgDAT4HMndhK4thJYZFQ3+RwC6P1piQckACHD+heDsE601PYzQ7C9oYpzPbV2B9gkBvSLAgTslZ1vrdxihZUGvYYEFIoRXK/fbS5RHCOgCAc43VA7zP9tWlyMIzeYiBs5ua1uRjgkBPSHAGJ8d52obpY4gtCyvXOKr4cD7cp8SIaA7BDiWVywOtBtmbpfQcgBFkfA1IowXkPuUCAG9ICA5aYmGp3ekT4eE7rm0aYsI413TUUPKJwS6AgHJScnNjvrukNCyQeVi/2IRxpsv9ykVHAL6GzDn8w5ysmPVOiW0bFZR579J+NPvyn1KhEBXISA5WFHjvzVZ/0kJzd5BRPxNEr7LjmTCqJwQyAUCce5FMIkJdyGZ/KSElgJ6L/XttYBfKOSl90s4sjElQiArBHhYck9yMBUxKRFaCupVE1gjriLOlPuUCIF8ISA5J7mXan8pE1oKrKgJ/FpcRTyLA1/LY0qEQK4QkBzjUZwZ51wanaRFaCm3ssb/po1FxogON8vjgkw06JwiILi1xRqJnNz7D760f0MubULLkRz1fOjLIr9vHDiWyWNKhIAyBDj/k+DWKd2XhjIKQmREaKl8z1fgrajxXSRckHnymBIhkC0CIprxUEWN/wLJrUxlZUxo2aEMowgX5BbGoxPEbP2BzKNECKSNAMcHkkO9a/w/l5xKu32rBlkROiGnoia4vLLGdzqLRS+R/k8in7aEQGcIcI7PGaKTJHckhzqrm2qZEkInOqtYEnyxss43HDx2DTjflcinLSFwGAJyyQwem1Hp9lVVLA7+8bCyLA+UEhoAmLiyWFkTWFgR9R/HeOwOoZ9XJPonBCQCXobYHMGNIYIjT0quyEyVSTmhE8qxpQhW1ATuRpGvN+PRiwH+lPiK2Zsop21hICBtzjh/WrqjkgsViwN3SW7kavQ5I3RC4crn4K+oCb5Uudg/vXKYr5IhOh6c3wfwjYk6tDUbAtK2/H4mbC1tLiIXV8fdUcGFXI8054RuPQA2F7GKxcEPK2v8twmCD9civlJE+AjOY+cxHrvuENF/Lz7V73HwL8VxpHV72tcDAjws7FLLgX9wzp8T0a17hRvxQy0WO1fkxW0qbSvSrdLW0ub51PpfAAAA//9DdZJiAAAABklEQVQDAAm9RhizozlyAAAAAElFTkSuQmCC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Clinical Swiss: white and mist grounds, deep navy type, safety orange only for the logo lockup, actions and small markers. Strict grid, thin rules. */
+:root{
+  --orange:#E8590C;
+  --orange-dk:#B5450A;
+  --navy:#13294B;
+  --text:#2A3850;
+  --muted:#5E6B7E;
+  --line:#D9D9D4;
+  --mist:#F4F4F2;
+  --butter:#F1D97B;
+  --butter-lt:#FAF2D1;
+  --paper:#FFFFFF;
+  --display:"Manrope","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Work Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --max:1180px;
+  --g:clamp(18px,4vw,40px);
+  --sec:clamp(64px,8vw,112px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-weight:500;font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--display);color:var(--navy);text-wrap:balance;margin:0;letter-spacing:-0.02em;line-height:1.08;font-weight:800}
+p{margin:0;max-width:62ch}
+h2,h3,h4,p,dd,li{overflow-wrap:break-word}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+.mist{background:var(--mist)}
+.navy{background:var(--navy);color:#C9D2DF}
+.navy h2,.navy h3{color:var(--paper)}
+.ph{background:#FFE9DC;padding:0 4px;border-radius:2px}
+.help .r .ph,.navy .ph{background:rgba(232,89,12,.25);color:var(--paper)}
+
+/* Labels */
+.label{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.label::before{content:"";width:18px;height:3px;background:var(--orange)}
+.navy .label{color:#AEB9C9}
+
+/* Logo lockup: wordmark in the orange bar */
+.logo{display:inline-flex;align-items:center;background:var(--orange);color:var(--navy);text-decoration:none;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-0.05em;line-height:1;padding:9px 14px 11px}
+
+/* Header */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);-webkit-backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:32px;height:72px}
+.nav .links{display:flex;gap:28px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav .links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--navy);padding:6px 0;border-bottom:2px solid transparent}
+.nav .links a:hover{border-bottom-color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-family:var(--body);font-size:15px;font-weight:600;padding:13px 20px;border-radius:4px;border:2px solid transparent;transition:background .15s,color .15s,border-color .15s;white-space:nowrap}
+.btn.primary{background:var(--orange);color:var(--navy)}
+.btn.primary:hover{background:var(--orange-dk);color:var(--paper)}
+.btn.secondary{border-color:var(--navy);color:var(--navy)}
+.btn.secondary:hover{background:var(--navy);color:var(--paper)}
+.navy .btn.secondary{border-color:#AEB9C9;color:var(--paper)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:4px;color:var(--navy);font:600 15px/1 var(--body);padding:10px 14px;cursor:pointer;align-items:center;gap:10px}
+.menu-btn .bars{display:grid;gap:4px}
+.menu-btn .bars i{display:block;width:18px;height:2px;background:currentColor}
+.drawer{display:none}
+@media (max-width:1000px){
+  .nav .links,.nav .head-cta{display:none}
+  .menu-btn{display:inline-flex}
+  .drawer{position:fixed;inset:72px 0 auto 0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(19,41,75,.12);max-height:calc(100dvh - 72px);overflow:auto}
+  .drawer.open{display:block}
+  .drawer ul{list-style:none;margin:0;padding:4px var(--g) 8px}
+  .drawer li a{display:block;text-decoration:none;font-family:var(--display);font-weight:700;font-size:22px;color:var(--navy);padding:16px 0;border-bottom:1px solid var(--line)}
+  .drawer .btn{display:flex;margin:16px var(--g) 24px}
+}
+
+/* Hero */
+.hero{border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(48px,7vw,96px)}
+.hero h1{font-size:clamp(32px,4.2vw,54px);line-height:1.02;letter-spacing:-0.035em}
+.hero h1 .accent{box-shadow:inset 0 -0.18em 0 var(--orange)}
+.hero .sub{font-size:19px;margin-top:22px;color:var(--text)}
+.hero .tag{font-family:var(--display);font-weight:700;font-size:20px;color:var(--navy);margin-top:18px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.d-card{background:var(--navy);color:#C9D2DF;padding:clamp(24px,3vw,36px);border-radius:6px;display:grid;gap:0}
+.d-card .lock{margin-bottom:22px;justify-self:start}
+.d-row{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)}
+.d-row .n{grid-row:1 / span 2;font-family:var(--display);font-weight:800;font-size:15px;color:var(--orange);padding-top:4px}
+.d-row h3{color:var(--paper);font-size:24px}
+.d-row p{font-size:15px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+
+/* Audience cards */
+.who .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:32px;padding-bottom:32px}
+.who a{display:grid;gap:6px;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px 20px 22px;transition:border-color .15s,box-shadow .15s}
+.who a:hover{border-color:var(--orange);box-shadow:0 8px 20px rgba(19,41,75,.08)}
+.who .k{font-size:13px;color:var(--muted)}
+.who h3{font-size:19px;display:flex;justify-content:space-between;gap:8px}
+.who h3 span{color:var(--orange)}
+@media (max-width:900px){.who .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.who .wrap{grid-template-columns:1fr;gap:10px}}
+
+/* Section heads */
+section.s{padding:var(--sec) 0}
+.head{display:grid;grid-template-columns:repeat(12,1fr);gap:16px 24px;margin-bottom:48px}
+.head .label{grid-column:1 / -1}
+.head h2{grid-column:1 / span 8;font-size:clamp(32px,4.2vw,52px)}
+.head .lede{grid-column:1 / span 7;font-size:19px}
+@media (max-width:900px){.head h2,.head .lede{grid-column:1 / -1}}
+
+/* Intro statement */
+.statement .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.statement p.big{grid-column:1 / span 9;font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.2;color:var(--navy);letter-spacing:-0.02em;max-width:none}
+.statement p.big em{font-style:normal;color:var(--orange)}
+@media (max-width:900px){.statement p.big{grid-column:1 / -1}}
+
+/* Services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sv{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:6px;padding:28px;display:grid;gap:14px;align-content:start}
+.sv .n{font-family:var(--display);font-weight:800;font-size:14px;color:var(--orange-dk);letter-spacing:.04em}
+.sv h3{font-size:28px}
+.sv ul{list-style:none;margin:6px 0 0;padding:0}
+.sv li{padding:10px 0 10px 22px;border-top:1px solid var(--line);font-size:15px;position:relative}
+.sv li::before{content:"";position:absolute;left:2px;top:19px;width:8px;height:8px;background:var(--orange)}
+@media (max-width:900px){.svc{grid-template-columns:1fr}}
+
+/* Partners */
+.promise{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.pr{padding:28px 28px 30px 0;border-bottom:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.pr:not(:nth-child(3n+1)){border-left:1px solid var(--line);padding-left:28px}
+.pr .big{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,36px);color:var(--navy);letter-spacing:-0.03em;line-height:1.05}
+.pr h3{font-size:17px;font-family:var(--body);font-weight:600;letter-spacing:0;color:var(--text)}
+.pr p{font-size:15px;color:var(--muted)}
+@media (max-width:900px){.promise{grid-template-columns:1fr}.pr:not(:nth-child(3n+1)){border-left:0;padding-left:0}}
+
+.aud{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+.a{background:var(--mist);border-radius:6px;padding:28px;display:grid;gap:10px;align-content:start}
+.a h3{font-size:24px}
+.a p{font-size:16px}
+.a ul{margin:4px 0 0;padding-left:18px;font-size:15px;color:var(--muted);display:grid;gap:4px}
+@media (max-width:760px){.aud{grid-template-columns:1fr}}
+
+/* Process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+.steps li{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:10px;align-content:start}
+.steps .n{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px}
+.steps h3{font-size:20px}
+.steps p{font-size:15px;color:var(--muted)}
+@media (max-width:980px){.steps{grid-template-columns:1fr}.steps li{grid-template-columns:36px 1fr;gap:4px 16px}.steps .n{grid-row:1 / span 2}}
+
+/* Injured worker guide */
+.what{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:56px}
+.what > div{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px;display:grid;gap:12px;align-content:start}
+.what h3{font-size:24px}
+@media (max-width:760px){.what{grid-template-columns:1fr}}
+
+.path{list-style:none;margin:0;padding:0;position:relative}
+.path li{display:grid;grid-template-columns:56px 1fr 1.4fr;gap:8px 28px;padding:26px 0;border-top:1px solid var(--line);align-items:start}
+.path li:last-child{border-bottom:1px solid var(--line)}
+.path .n{width:44px;height:44px;border-radius:50%;border:2px solid var(--orange);color:var(--navy);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:16px;background:var(--paper)}
+.path h3{font-size:22px}
+.path .when{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--orange-dk);letter-spacing:.04em;text-transform:uppercase}
+.path p{font-size:16px}
+.path p + p{margin-top:10px}
+@media (max-width:820px){.path li{grid-template-columns:44px 1fr;gap:6px 16px}.path li > div:last-child{grid-column:2}}
+
+.sub-h{font-size:clamp(24px,2.6vw,32px);margin:72px 0 24px}
+.frus{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.fr{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:6px;padding:24px;display:grid;gap:8px;align-content:start}
+.fr h4{font-size:19px}
+.fr p{font-size:15px;color:var(--text)}
+@media (max-width:760px){.frus{grid-template-columns:1fr}}
+
+.gloss{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0;border-top:1px solid var(--line)}
+.gl{padding:18px 18px 20px 0;border-bottom:1px solid var(--line);display:grid;gap:4px;align-content:start}
+.gl:not(:nth-child(4n+1)){padding-left:18px;border-left:1px solid var(--line)}
+.gl dt{font-family:var(--display);font-weight:800;font-size:18px;color:var(--navy)}
+.gl dd{margin:0;font-size:15px;color:var(--muted)}
+@media (max-width:980px){.gloss{grid-template-columns:1fr 1fr}.gl:not(:nth-child(4n+1)){border-left:0;padding-left:0}.gl:nth-child(even){border-left:1px solid var(--line);padding-left:18px}}
+@media (max-width:520px){.gloss{grid-template-columns:1fr}.gl:nth-child(even){border-left:0;padding-left:0}}
+
+.help{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-top:56px}
+.help > div{border-radius:6px;padding:28px;display:grid;gap:12px;align-content:start}
+.help .l{background:var(--paper);border:1px solid var(--line)}
+.help .r{background:var(--navy);color:#C9D2DF}
+.help .r h3{color:var(--paper)}
+.help h3{font-size:24px}
+.help .phone{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.4vw,40px);color:var(--orange);letter-spacing:-0.02em;line-height:1}
+.help .fine{font-size:13px;color:var(--muted)}
+.help .small{font-size:14px}
+@media (max-width:820px){.help{grid-template-columns:1fr}}
+
+/* Model */
+.model{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.m{border-top:3px solid var(--orange);padding-top:20px;display:grid;gap:8px;align-content:start}
+.m h3{font-size:22px}
+.m p{font-size:15px}
+@media (max-width:900px){.model{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.model{grid-template-columns:1fr}}
+.dict .wrap{padding-top:clamp(36px,5vw,56px);padding-bottom:clamp(36px,5vw,56px)}
+.dict .entry{max-width:none}
+.dict .entry dd{max-width:none;font-size:clamp(16px,1.6vw,19px)}
+.entry{margin:0;display:grid;gap:14px;max-width:760px}
+.entry dt{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.entry .hw{font-family:var(--display);font-weight:800;font-size:clamp(40px,5vw,56px);color:var(--orange);letter-spacing:-0.03em;line-height:1}
+.entry .pron{font-size:18px;color:#AEB9C9}
+.entry .pos{font-size:17px;font-style:italic;color:#C9D2DF}
+.entry dd{margin:0;font-size:17px;line-height:1.6;color:#C9D2DF}
+.entry .lbl{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB9C9;margin-right:10px}
+.entry .def{display:grid;grid-template-columns:28px 1fr;color:var(--paper);font-family:var(--display);font-weight:700;font-size:clamp(19px,2vw,22px);line-height:1.35}
+.entry .num{color:var(--orange)}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.p{border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;gap:6px;align-content:start}
+.p h3{font-size:21px}
+.p .role{font-size:15px;color:var(--muted)}
+.p{border-top:4px solid var(--orange)}
+.p .title{color:var(--navy);font-weight:600}
+.p .org{font-size:14px;color:var(--muted);font-style:italic}
+@media (max-width:900px){.team{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.team{grid-template-columns:1fr}}
+
+.p{text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
+a.p:hover{border-color:var(--orange);box-shadow:0 8px 20px rgba(19,41,75,.08)}
+.p .more{margin-top:8px;font-size:14px;font-weight:600;color:var(--orange-dk)}
+.bios{display:grid;gap:20px;margin-top:56px}
+.bio{border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:0;padding:26px;display:grid;gap:12px;scroll-margin-top:90px}
+.bio:target{background:#FFF6F0}
+.bio-h{display:grid;gap:4px}
+.bio h3{font-size:24px}
+.bio .role{font-size:15px;color:var(--muted)}
+.bio .back{font-size:14px;font-weight:600;color:var(--navy);text-decoration:none}
+.bio .back:hover{color:var(--orange-dk)}
+
+.js .view{display:none}
+.js .view.active{display:block}
+.nav .links a.on{border-bottom-color:var(--orange)}
+.drawer li a.on{color:var(--orange-dk)}
+/* Butter yellow accents */
+.statement{background:var(--butter-lt)}
+section.s.statement{padding:clamp(28px,3.6vw,44px) 0}
+.navy .label{color:var(--butter)}
+.navy .label::before{background:var(--butter)}
+.entry .lbl{color:var(--butter)}
+.entry .pron{color:var(--butter)}
+.d-row .n{color:var(--butter)}
+.steps .n{background:var(--butter);color:var(--navy)}
+.path .n{background:var(--butter);border-color:var(--butter)}
+.who a:hover{border-color:var(--butter);box-shadow:0 0 0 3px var(--butter-lt)}
+.fr{background:var(--butter-lt);border-color:#EADBA0;border-left-color:var(--orange)}
+.help .l{background:var(--butter-lt);border-color:#EADBA0}
+.gl dt{box-shadow:inset 0 -0.35em 0 var(--butter);justify-self:start}
+.m{border-top-color:var(--butter)}
+.p .org{justify-self:start;margin-top:2px;color:var(--navy);font-style:normal;font-weight:500;font-size:14px;line-height:1.6}
+.p .org span{padding:0 2px;background:linear-gradient(transparent 64%,var(--butter) 64%,var(--butter) 90%,transparent 90%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lockrow{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.badge{display:block;flex:none}
+.fmrow{display:inline-flex;align-items:center;gap:10px}
+.navbadge{display:block;line-height:0}
+.legal{max-width:820px;display:grid;gap:14px}
+.legal h2{font-size:clamp(32px,4vw,48px);margin-top:4px}
+.legal h3{font-size:21px;margin-top:18px}
+.legal ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.legal .upd{font-size:14px;color:var(--muted)}
+.flinks{display:flex;flex-wrap:wrap;gap:6px 18px}
+.flinks a{text-decoration:none;font-weight:500}
+.flinks a:hover{text-decoration:underline}
+.report{background:#FFFFFF;color:#000000;border:1px solid #000000;max-width:860px;padding:clamp(22px,4vw,48px);display:grid;gap:12px;font-family:var(--body);font-weight:400;font-size:15px;line-height:1.6}
+.report h3,.report h4,.report b,.report dt{color:#000000}
+.report h4{font-size:15px;margin-top:14px;text-transform:uppercase;letter-spacing:.04em;font-weight:800;border-bottom:1px solid #000000;padding-bottom:3px}
+.report ul,.report ol{margin:0;padding-left:20px;display:grid;gap:4px}
+.report > .r-top{margin-top:calc(20px - clamp(22px,4vw,48px))}
+.r-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;border-bottom:3px solid #000000;padding-bottom:14px}
+.r-brand{display:grid;gap:20px;font-size:13px;font-weight:600;color:#000000}
+.r-mark{background:#1C1C1C;color:#FFFFFF;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-0.04em;padding:6px 16px 8px clamp(22px,4vw,48px);margin-left:calc(-1 * clamp(22px,4vw,48px));justify-self:start}
+.r-stamp{border:2px solid #000000;color:#000000;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px}
+.r-title{font-size:clamp(20px,2.4vw,26px);margin-top:4px}
+.r-meta{width:100%;border-collapse:collapse;font-size:14px;border:1px solid #000000}
+.r-meta th{text-align:left;font-weight:700;color:#000000;padding:6px 10px;white-space:nowrap;vertical-align:top}
+.r-meta td{padding:6px 10px;vertical-align:top}
+.r-meta tr+tr{border-top:1px solid #000000}
+@media (max-width:640px){.r-meta,.r-meta tbody,.r-meta tr{display:block}.r-meta th,.r-meta td{display:inline-block;width:48%}}
+.r-summary{background:#FFFFFF;border:3px solid #000000;padding:16px 18px;margin-top:6px}
+.r-summary h4{margin-top:0;font-size:17px}
+.r-summary dl{margin:8px 0 0;display:grid;gap:8px}
+.r-summary dl div{display:grid;grid-template-columns:110px 1fr;gap:12px}
+.r-summary dt{font-weight:800}
+.r-summary dd{margin:0}
+@media (max-width:520px){.r-summary dl div{grid-template-columns:1fr;gap:0}}
+.r-sign{border-top:1px solid #000000;margin-top:16px;padding-top:14px;display:grid;gap:8px}
+.report .ph{background:none;border-bottom:1px dashed #000000;color:#000000}
+.report .r-records{gap:10px}
+.r-entries{display:grid;gap:10px}
+.report p{max-width:none}
+.cform{margin-top:40px;background:var(--paper);color:var(--text);border-radius:6px;padding:clamp(22px,3vw,36px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;max-width:880px}
+.cform h3{grid-column:1 / -1;font-size:26px;color:var(--navy)}
+.cform .cnote{grid-column:1 / -1;font-size:15px;color:var(--muted);margin-top:-6px}
+.crow{display:grid;gap:6px}
+.crow.full{grid-column:1 / -1}
+.crow label{font-size:14px;font-weight:600;color:var(--navy)}
+.crow label span{color:var(--orange-dk)}
+.crow input,.crow textarea{font:inherit;font-size:16px;color:var(--text);background:#fff;border:1px solid #B9BDC4;border-radius:4px;padding:11px 12px;width:100%}
+.crow input:focus,.crow textarea:focus{outline:3px solid var(--orange);outline-offset:1px;border-color:var(--navy)}
+.crow [aria-invalid="true"]{border-color:#B42318;border-width:2px}
+.crow .err{font-size:13px;color:#B42318}
+.crow.full .btn{justify-self:start;border:0;cursor:pointer}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cstatus{font-size:15px;font-weight:500;color:var(--navy);min-height:1.2em}
+@media (max-width:640px){.cform{grid-template-columns:1fr}}
+.textlink{font-weight:600;color:var(--orange-dk)}
+/* Contact */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:22px;display:grid;gap:6px;align-content:start}
+.c .k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#AEB9C9}
+.c .v{font-family:var(--display);font-weight:700;font-size:20px;color:var(--paper);overflow-wrap:anywhere}
+.notice{margin-top:32px;font-size:14px;display:grid;gap:8px}
+@media (max-width:900px){.cgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.cgrid{grid-template-columns:1fr}}
+
+/* Footer: the brand bar */
+footer{background:var(--orange);color:var(--navy)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px;font-size:14px;font-weight:500}
+footer .fm{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-0.05em}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero .sub{font-size:17px}
+  .hero .btns .btn{flex:1 1 100%}
+  .head{margin-bottom:32px}
+  .head .lede{font-size:17px}
+  .sv,.a,.what > div,.help > div{padding:22px}
+  .pr{padding:22px 0}
+  .name .parts{gap:28px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="navbadge" href="#top" aria-label="Axocomp home"><svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true" style="display: block"><rect width="100" height="100" rx="22" fill="#E8590C"/><path d="M40.42 73.17Q35.90 73.17 32.76 71.43Q29.62 69.70 28.00 66.79Q26.38 63.89 26.38 60.38Q26.38 57.45 27.28 55.04Q28.18 52.62 30.19 50.76Q32.19 48.91 35.59 47.66Q37.93 46.81 41.16 46.14Q44.40 45.48 48.50 44.88Q52.59 44.27 57.50 43.53L53.68 45.64Q53.68 41.89 51.89 40.14Q50.09 38.38 45.88 38.38Q43.54 38.38 41.01 39.51Q38.47 40.64 37.46 43.53L27.87 40.49Q29.46 35.26 33.87 31.99Q38.28 28.71 45.88 28.71Q51.46 28.71 55.79 30.43Q60.12 32.14 62.34 36.35Q63.59 38.69 63.82 41.03Q64.06 43.37 64.06 46.26V72.00H54.78V63.34L56.10 65.14Q53.02 69.39 49.45 71.28Q45.88 73.17 40.42 73.17ZM42.69 64.82Q45.61 64.82 47.62 63.79Q49.63 62.76 50.82 61.43Q52.01 60.11 52.44 59.21Q53.25 57.49 53.39 55.21Q53.53 52.93 53.53 51.41L56.65 52.19Q51.93 52.97 49.00 53.49Q46.08 54.02 44.28 54.45Q42.49 54.88 41.12 55.39Q39.56 56.01 38.61 56.73Q37.65 57.45 37.21 58.31Q36.76 59.17 36.76 60.22Q36.76 61.66 37.48 62.70Q38.20 63.73 39.53 64.28Q40.85 64.82 42.69 64.82Z" fill="#1C1C1C"/><circle cx="74" cy="68" r="6" fill="#F4F4F2"/></svg></a>
+    <ul class="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#partners">Referral partners</a></li>
+      <li><a href="#injured-workers">Injured workers</a></li>
+      <li><a href="#model">Why Axocomp</a></li>
+      <li><a href="#team">The team</a></li>
+    </ul>
+    <a class="btn primary head-cta" href="#contact">Refer a patient</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="drawer"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="menu-label">Menu</span></button>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="Mobile">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#partners">Referral partners</a></li>
+      <li><a href="#injured-workers">Injured workers</a></li>
+      <li><a href="#model">Why Axocomp</a></li>
+      <li><a href="#team">The team</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#partner">Partner with us</a></li>
+    </ul>
+    <a class="btn primary" href="#contact">Refer a patient</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="view active" data-view="home">
+  <section class="navy dict" aria-label="What axocomp means">
+    <div class="wrap"><dl class="entry">
+          <dt><span class="hw">ax·o·comp</span> <span class="pron">/ˈak-sō-ˌkämp/</span> <span class="pos">noun</span></dt>
+          <dd class="ety"><span class="lbl">Etymology</span> From <i>axon</i>, the nerve fiber that carries signals through the nervous system, and <i>comp</i>, as in workers' compensation.</dd>
+        </dl></div>
+  </section>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="label">Workers' Comp &amp; Personal Injury Neurology</span>
+        <h1 style="margin-top:18px">Neurologists for injured workers and <span class="accent">injury claims.</span></h1>
+        <p class="sub">Board-certified neurologists who see the patient, run the testing in house and send back documentation that moves the case forward. Now accepting referrals.</p>
+        <p class="tag">We understand the assignment.</p>
+        <div class="btns">
+          <a class="btn primary" href="#contact">Refer a patient</a>
+          <a class="btn secondary" href="#injured-workers">New to workers' comp?</a>
+        </div>
+      </div>
+      <div class="d-card" aria-label="What we deliver">
+        <div class="lockrow"><svg class="badge" width="52" height="52" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#E8590C"/><path d="M40.42 73.17Q35.90 73.17 32.76 71.43Q29.62 69.70 28.00 66.79Q26.38 63.89 26.38 60.38Q26.38 57.45 27.28 55.04Q28.18 52.62 30.19 50.76Q32.19 48.91 35.59 47.66Q37.93 46.81 41.16 46.14Q44.40 45.48 48.50 44.88Q52.59 44.27 57.50 43.53L53.68 45.64Q53.68 41.89 51.89 40.14Q50.09 38.38 45.88 38.38Q43.54 38.38 41.01 39.51Q38.47 40.64 37.46 43.53L27.87 40.49Q29.46 35.26 33.87 31.99Q38.28 28.71 45.88 28.71Q51.46 28.71 55.79 30.43Q60.12 32.14 62.34 36.35Q63.59 38.69 63.82 41.03Q64.06 43.37 64.06 46.26V72.00H54.78V63.34L56.10 65.14Q53.02 69.39 49.45 71.28Q45.88 73.17 40.42 73.17ZM42.69 64.82Q45.61 64.82 47.62 63.79Q49.63 62.76 50.82 61.43Q52.01 60.11 52.44 59.21Q53.25 57.49 53.39 55.21Q53.53 52.93 53.53 51.41L56.65 52.19Q51.93 52.97 49.00 53.49Q46.08 54.02 44.28 54.45Q42.49 54.88 41.12 55.39Q39.56 56.01 38.61 56.73Q37.65 57.45 37.21 58.31Q36.76 59.17 36.76 60.22Q36.76 61.66 37.48 62.70Q38.20 63.73 39.53 64.28Q40.85 64.82 42.69 64.82Z" fill="#1C1C1C"/><circle cx="74" cy="68" r="6" fill="#F4F4F2"/></svg></div>
+        <div class="d-row"><span class="n">01</span><h3>Diagnostics</h3><p>Evaluation, EMG/NCS and video EEG under one roof.</p></div>
+        <div class="d-row"><span class="n">02</span><h3>Documentation</h3><p>Diagnosis, causation and work status, stated clearly.</p></div>
+        <div class="d-row"><span class="n">03</span><h3>Disposition</h3><p>MMI, impairment rating and return to work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="who mist" aria-label="Choose who you are">
+    <div class="wrap">
+      <a href="#injured-workers"><span class="k">I was hurt at work</span><h3>Injured workers <span>→</span></h3></a>
+      <a href="#partners"><span class="k">I manage claims</span><h3>Adjusters &amp; case managers <span>→</span></h3></a>
+      <a href="#partners"><span class="k">I represent a client</span><h3>Attorneys <span>→</span></h3></a>
+      <a href="#partners"><span class="k">I have an injured employee</span><h3>Employers <span>→</span></h3></a>
+    </div>
+  </nav>
+
+  <section class="s statement">
+    <div class="wrap">
+      <p class="big">Very few neurologists work in workers' compensation and personal injury. <em>At Axocomp, that's all we do.</em></p>
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="services">
+  <section class="s mist">
+    <div class="wrap">
+      <div class="head"><span class="label">Services</span><h2>Three things every claim needs from neurology.</h2></div>
+      <div class="svc">
+        <div class="sv">
+          <span class="n">01</span><h3>Diagnostics</h3>
+          <p>Objective testing under one roof, so the workup doesn't stall between offices.</p>
+          <ul>
+            <li>Neurological evaluation for work and accident injuries</li>
+            <li>EMG and nerve conduction studies</li>
+            <li>5-day video EEG monitoring</li>
+            <li>Concussion and traumatic brain injury</li>
+            <li>Nerve injury, radiculopathy, post-traumatic headache</li>
+          </ul>
+        </div>
+        <div class="sv">
+          <span class="n">02</span><h3>Documentation</h3>
+          <p>Records written for the people who act on them: adjusters, case managers and counsel.</p>
+          <ul>
+            <li>Clear diagnosis and causation opinions</li>
+            <li>Work status and restrictions on every note</li>
+            <li>Visit notes and test reports available within 24 hours of the visit</li>
+            <li><a class="textlink" href="#sample-report">See a sample report →</a></li>
+          </ul>
+        </div>
+        <div class="sv">
+          <span class="n">03</span><h3>Disposition</h3>
+          <p>A defined endpoint for every case, not open-ended follow-up.</p>
+          <ul>
+            <li>Treatment plan with expected timeline</li>
+            <li>Maximum medical improvement (MMI)</li>
+            <li>Impairment ratings</li>
+            <li>Return-to-work guidance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="partners">
+  <section class="s">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Referral partners</span>
+        <h2>Fewer phone calls. Cleaner files. Faster closure.</h2>
+        <p class="lede">What you can count on with every Axocomp referral.</p>
+      </div>
+      <div class="promise">
+        <div class="pr"><span class="big">2 weeks</span><h3>From referral to first visit</h3><p>New patients are seen within 2 weeks of referral, and you get confirmation when the appointment is set.</p></div>
+        <div class="pr"><span class="big">Every note</span><h3>Work status and restrictions</h3><p>Every visit note includes current work status and restrictions.</p></div>
+        <div class="pr"><span class="big">One roof</span><h3>Testing in house</h3><p>EMG/NCS and video EEG are done here, with no outside scheduling delays.</p></div>
+        <div class="pr"><span class="big">One contact</span><h3>A single point of contact</h3><p>One person to call for scheduling, records and status updates.</p></div>
+        <div class="pr"><span class="big">Plain English</span><h3>Opinions you can act on</h3><p>Diagnosis, causation and next steps stated clearly, not buried in the note.</p></div>
+        <div class="pr"><span class="big">An endpoint</span><h3>MMI and ratings</h3><p>We work toward a defined disposition: MMI, a rating and return to work.</p></div>
+      </div>
+      <p style="margin-top:28px"><a class="btn secondary" href="#sample-report">See a sample Axocomp report</a></p>
+      <div class="aud">
+        <div class="a"><h3>Adjusters</h3><p>Objective findings and work status on every note, so you can decide without chasing records.</p><ul><li>Add Axocomp to your C-42 panels for neurological injuries</li><li>Authorization requests come with the clinical reason attached</li></ul></div>
+        <div class="a"><h3>Nurse case managers</h3><p>One point of contact from first visit through disposition.</p><ul><li>Reports available within 24 hours of each visit</li><li>We tell you before a delay becomes a problem</li></ul></div>
+        <div class="a"><h3>Attorneys</h3><p>Neurologist-level opinions on diagnosis and causation for comp and personal injury matters.</p><ul><li>Objective testing to support the record</li><li>Clear documentation from intake through MMI</li></ul></div>
+        <div class="a"><h3>Employers</h3><p>Specialist care that gets injured employees evaluated quickly and back to work safely.</p><ul><li>Clear restrictions for light-duty planning</li><li>Focused on return to work from the first visit</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s mist" id="process">
+    <div class="wrap">
+      <div class="head"><span class="label">How a referral works</span><h2>From referral to disposition.</h2></div>
+      <ol class="steps">
+        <li><span class="n">1</span><h3>Refer</h3><p>Send the referral with claim details and records. We confirm receipt and authorization.</p></li>
+        <li><span class="n">2</span><h3>Evaluate</h3><p>A neurologist sees the patient and orders the testing the case needs.</p></li>
+        <li><span class="n">3</span><h3>Test</h3><p>EMG/NCS and video EEG are done in house.</p></li>
+        <li><span class="n">4</span><h3>Document</h3><p>Diagnosis, causation opinion, work status and plan, in writing.</p></li>
+        <li><span class="n">5</span><h3>Close</h3><p>We bring the case to MMI, impairment rating and return to work.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="injured-workers">
+  <section class="s">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">For injured workers</span>
+        <h2>Hurt at work? Here's how workers' comp works.</h2>
+        <p class="lede">Workers' comp can feel confusing and slow. This guide explains the Tennessee process in plain language so you know what to expect and who to call.</p>
+      </div>
+
+      <div class="what">
+        <div><h3>What is workers' compensation?</h3><p>It's insurance your employer carries for work injuries. If you're hurt on the job, it pays for your medical care and part of your lost wages while you recover.</p></div>
+        <div><h3>Who pays for my care?</h3><p>It's a no-fault system. In most cases it doesn't matter who caused the accident, and you don't pay for care from your authorized doctor on an accepted claim.</p></div>
+      </div>
+
+      <ol class="path">
+        <li><span class="n">1</span><div><h3>Report the injury</h3><span class="when">Right away</span></div><div><p>Tell your supervisor or the person named on your workplace's workers' comp poster as soon as possible, even if the injury seems minor. Ask for a copy of the injury report.</p></div></li>
+        <li><span class="n">2</span><div><h3>Choose your doctor from a panel</h3><span class="when">Form C-42</span></div><div><p>In Tennessee, your employer gives you a list of at least three doctors, called a panel. You pick one by signing Form C-42. That doctor becomes your authorized treating physician (ATP) and directs your care.</p><p>Keep a copy of your signed form. In an emergency, get care first. The panel comes after you're stable.</p></div></li>
+        <li><span class="n">3</span><div><h3>Get evaluated and referred</h3><span class="when">ATP referral</span></div><div><p>If your injury involves your nerves, brain or spine, your ATP may refer you to a neurologist like Axocomp, or Axocomp may be on your panel. Specialist visits and tests usually need the insurance adjuster's approval first.</p></div></li>
+        <li><span class="n">4</span><div><h3>Follow your work status</h3><span class="when">Every visit</span></div><div><p>After each visit your doctor sets your work status: full duty, light duty with restrictions, or off work. If your employer offers light duty within your restrictions, you're expected to take it. Turning it down can stop your wage benefits.</p></div></li>
+        <li><span class="n">5</span><div><h3>Wage benefits if you're off work</h3><span class="when">After 7 days</span></div><div><p>If your ATP takes you off work, temporary disability benefits usually pay about two-thirds of your average weekly wage. They start on day 8. If you're off 14 days or more, you're paid back to day 1. Your employer's insurance company pays these benefits, not the state.</p></div></li>
+        <li><span class="n">6</span><div><h3>Reach MMI and a rating</h3><span class="when">End of treatment</span></div><div><p>Maximum medical improvement (MMI) means you've reached the point where your doctor doesn't expect further improvement. Your doctor then decides whether you have a lasting impairment and gives it a rating, which is used to figure out any permanent disability benefit.</p></div></li>
+      </ol>
+
+      <h3 class="sub-h">Common frustrations, answered</h3>
+      <div class="frus">
+        <div class="fr"><h4>Why is everything taking so long?</h4><p>Most visits and tests need the adjuster's approval before they can be scheduled. We send authorization requests quickly, follow up, and tell you when we're waiting on approval.</p></div>
+        <div class="fr"><h4>Why didn't I get paid for my first week off?</h4><p>Tennessee doesn't pay wage benefits for the first 7 days unless you end up off work 14 days or more. Check whether your employer lets you use sick or vacation time.</p></div>
+        <div class="fr"><h4>Can I see my own doctor?</h4><p>Your care is directed by the ATP you picked from the panel. You can get a second opinion on your own, but you may have to pay for it. Ask the adjuster before you see anyone outside the claim.</p></div>
+        <div class="fr"><h4>Do I get paid for driving to appointments?</h4><p>You can ask for mileage reimbursement when the trip is more than 15 miles one way. Keep a log of your trips. Time at appointments usually isn't paid unless your employer's policy covers it.</p></div>
+      </div>
+
+      <h3 class="sub-h">Words you'll hear</h3>
+      <dl class="gloss">
+        <div class="gl"><dt>Adjuster</dt><dd>The insurance company employee who manages your claim and approves care and payments.</dd></div>
+        <div class="gl"><dt>Panel (C-42)</dt><dd>The list of at least three doctors from which you choose your treating physician.</dd></div>
+        <div class="gl"><dt>ATP</dt><dd>Authorized treating physician: the doctor you chose from the panel, who directs your care.</dd></div>
+        <div class="gl"><dt>Nurse case manager</dt><dd>A nurse the insurer may assign to coordinate your care and appointments.</dd></div>
+        <div class="gl"><dt>Light duty</dt><dd>Modified work within your restrictions while you recover.</dd></div>
+        <div class="gl"><dt>TTD</dt><dd>Temporary total disability: wage benefits while your doctor has you off work.</dd></div>
+        <div class="gl"><dt>MMI</dt><dd>Maximum medical improvement: the point where more recovery isn't expected.</dd></div>
+        <div class="gl"><dt>Impairment rating</dt><dd>A percentage your doctor assigns at MMI if the injury left a lasting effect.</dd></div>
+      </dl>
+
+      <div class="help">
+        <div class="l">
+          <h3>Having trouble with your claim?</h3>
+          <p>The Tennessee Bureau of Workers' Compensation has free ombudsmen who answer questions and help when benefits or care are delayed or denied. If you were hurt in a car or other accident and have an attorney, call your attorney first.</p>
+          <p class="fine">This guide is general information about Tennessee workers' compensation, not legal advice. Your claim may be different.</p>
+        </div>
+        <div class="r">
+          <h3>TN workers' comp ombudsman</h3>
+          <span class="phone">800-332-2667</span>
+          <p class="small">Free help for injured workers without an attorney.</p>
+          <p class="small">Questions about your Axocomp appointment or tests? Call us at <span class="ph">(615) 000-0000</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="model">
+  <section class="s navy">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Why Axocomp</span>
+        <h2>One standard. Every location.</h2>
+        <p class="lede">Axocomp is built as a repeatable neurology unit, so every location delivers the same care and the same documentation.</p>
+      </div>
+      <div class="model">
+        <div class="m"><h3>Neurologist-led teams</h3><p>Each location pairs a neurologist with an advanced practice provider for capacity and continuity.</p></div>
+        <div class="m"><h3>Diagnostics on site</h3><p>EMG/NCS and video EEG at the point of care.</p></div>
+        <div class="m"><h3>Standard protocols</h3><p>The same visit structure and documentation standard at every site.</p></div>
+        <div class="m"><h3>Growing across Tennessee</h3><p>New locations planned to bring specialist care closer to injured workers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="team">
+  <section class="s">
+    <div class="wrap">
+      <div class="head"><span class="label">The team</span><h2>Leadership</h2></div>
+      <div class="team">
+        <div class="p"><h3>Gretchen H. Campbell, MD</h3><span class="role title">Medical Director</span><span class="role">Neurodiagnostics Specialist</span><span class="org"><span>Axocomp Neurology</span></span></div>
+        <div class="p"><h3>Heather D. Horton, MD, MBA</h3><span class="role title">Co-Medical Director</span><span class="role">Certified Workers' Compensation Neurologist</span><span class="role">Certified IME Specialist</span><span class="org"><span>Axocomp Neurology</span></span></div>
+        <div class="p"><h3>Jamelle T. Magee, Esq.</h3><span class="role title">Chief Executive Officer</span><span class="org"><span>Axocomp Management Services, LLC</span></span></div>
+        <div class="p"><h3>William O. Horton II</h3><span class="role title">Finance Director</span><span class="org"><span>Axocomp Management Services, LLC</span></span></div>
+        <div class="p"><h3>Ernie V. Campbell</h3><span class="role title">HR &amp; Operations Director</span><span class="org"><span>Axocomp Management Services, LLC</span></span></div>
+        <div class="p"><h3>Dawson Toungette</h3><span class="role title">Business Development Manager</span><span class="org"><span>Axocomp Management Services, LLC</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="contact">
+  <section class="s navy">
+    <div class="wrap">
+      <div class="head"><span class="label">Refer a patient</span><h2>Send us the claim. We'll take it from there.</h2></div>
+      <div class="cgrid">
+        <div class="c"><span class="k">Phone</span><span class="v"><span class="ph">(615) 000-0000</span></span></div>
+        <div class="c"><span class="k">Referral fax</span><span class="v"><span class="ph">(615) 000-0000</span></span></div>
+        <div class="c"><span class="k">Clinic and corporate office</span><span class="v">5651 Frist Blvd, Suite 416-B<br>Hermitage, TN 37076</span></div>
+      </div>
+      <form class="cform" id="cform" novalidate>
+        <h3>Send us a message</h3>
+        <p class="cnote">For general questions, partnerships and careers. Please don't include patient health information. Send referrals and patient records to our referral fax.</p>
+        <div class="crow">
+          <label for="cf-name">Name <span aria-hidden="true">*</span></label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="crow">
+          <label for="cf-title">Title</label>
+          <input id="cf-title" name="title" type="text" autocomplete="organization-title">
+        </div>
+        <div class="crow">
+          <label for="cf-company">Company <span aria-hidden="true">*</span></label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization" required>
+        </div>
+        <div class="crow">
+          <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="crow">
+          <label for="cf-phone">Phone</label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="crow">
+          <label for="cf-subject">Subject <span aria-hidden="true">*</span></label>
+          <input id="cf-subject" name="subject" type="text" required>
+        </div>
+        <div class="crow full">
+          <label for="cf-message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="cf-website">Leave this field empty</label><input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="crow full">
+          <button class="btn primary" type="submit">Send message</button>
+          <p class="cstatus" id="cf-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  </div>
+  <div class="view" data-view="careers">
+  <section class="s">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Careers</span>
+        <h2>Practice neurology where it matters most to the claim.</h2>
+        <p class="lede">Axocomp builds neurologist-led teams for workers' compensation and personal injury care. Every location runs on the same protocols, the same documentation standard and the same support, so clinicians can focus on patients.</p>
+      </div>
+      <div class="svc">
+        <div class="sv"><span class="n">Why Axocomp</span><h3>Focused work</h3><p>One patient population, one set of questions to answer: diagnosis, causation, work status and disposition. No general neurology backlog.</p></div>
+        <div class="sv"><span class="n">Why Axocomp</span><h3>Built-in structure</h3><p>Standard visit templates, in-house EMG/NCS and video EEG, and administrative time built into the weekly schedule.</p></div>
+        <div class="sv"><span class="n">Why Axocomp</span><h3>Room to grow</h3><p>As Axocomp opens new locations, clinicians and staff have a path to lead a site, train new team members and shape the model.</p></div>
+      </div>
+      <h3 class="sub-h">Roles we hire for</h3>
+      <div class="aud" style="margin-top:0">
+        <div class="a"><h3>Neurologist</h3><p>Board-certified or board-eligible. Leads evaluations, EMG/NCS, causation opinions, MMI determinations and impairment ratings.</p></div>
+        <div class="a"><h3>Nurse practitioner or physician assistant</h3><p>Works alongside the neurologist on follow-up visits, work status updates and care coordination. Neurology experience preferred; we train on workers' comp.</p></div>
+        <div class="a"><h3>Medical assistant</h3><p>Rooms patients for both providers, keeps the clinic on schedule and supports in-office testing.</p></div>
+        <div class="a"><h3>Operations and front office</h3><p>Scheduling, authorizations and communication with adjusters and case managers.</p></div>
+      </div>
+      <div class="help" style="margin-top:0">
+        <div class="l"><h3>How to apply</h3><p>Send us a message through our contact form with "Careers" as the subject and the role that interests you. We'll reply with how to send your résumé or CV.</p></div>
+        <div class="r"><h3>Apply</h3><p><a class="btn primary" href="#contact">Go to the contact form</a></p><p class="small">Axocomp is an equal opportunity employer.</p></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="partner">
+  <section class="s">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Partner with us</span>
+        <h2>Bring specialist neurology to injured workers in your area.</h2>
+        <p class="lede">Axocomp grows by partnering with organizations that already serve injured workers or have room to host a clinic. Each new location runs on the same model, so partners get a proven process from the first day.</p>
+      </div>
+      <div class="aud" style="margin-top:0">
+        <div class="a"><h3>Host practices and facilities</h3><p>Have exam rooms that sit empty part of the week? Axocomp can operate a location within your space, adding a specialty service for your community without your building it.</p></div>
+        <div class="a"><h3>Insurers, TPAs and self-insured employers</h3><p>Work with us to give your injured workers faster access to neurology, with consistent documentation and a defined path to MMI and return to work.</p></div>
+        <div class="a"><h3>Referring physicians</h3><p>Occupational medicine, orthopedic and urgent care physicians can refer patients with nerve, brain and spine injuries directly, and receive our findings promptly.</p></div>
+        <div class="a"><h3>Clinicians who want to lead a site</h3><p>Neurologists interested in opening an Axocomp location in their market can join a model with protocols, training and support already in place.</p></div>
+      </div>
+      <h3 class="sub-h">What partners can expect</h3>
+      <ol class="steps">
+        <li><span class="n">1</span><h3>Conversation</h3><p>We learn about your organization, your market and the injured workers you serve.</p></li>
+        <li><span class="n">2</span><h3>Fit</h3><p>We confirm referral volume, space and staffing for a location.</p></li>
+        <li><span class="n">3</span><h3>Agreement</h3><p>We put terms in writing, reviewed by both sides' counsel.</p></li>
+        <li><span class="n">4</span><h3>Launch</h3><p>We bring our protocols, templates, training and testing services.</p></li>
+        <li><span class="n">5</span><h3>Support</h3><p>The same documentation standard and support as every Axocomp location.</p></li>
+      </ol>
+      <div class="help">
+        <div class="l"><h3>Start the conversation</h3><p>Tell us who you are, where you're located and how you'd like to work together. A member of our leadership team will follow up.</p></div>
+        <div class="r"><h3>Get in touch</h3><p><a class="btn primary" href="#contact">Go to the contact form</a></p><p class="small">Use "Partnership" as the subject.</p></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="privacy">
+  <section class="s">
+    <div class="wrap legal">
+      <span class="label">Legal</span>
+      <h2>Privacy policy</h2>
+      <p class="upd">Last updated: November 16, 2026</p>
+      <p>This privacy policy explains how Axocomp, PLLC (doing business as Axocomp Neurology) and Axocomp Management Services, LLC (collectively, "Axocomp," "we" or "us") collect, use and protect information through this website, axocomp.com. It applies only to this website.</p>
+      <h3>Your health information</h3>
+      <p>Information about your medical care is protected by the Health Insurance Portability and Accountability Act (HIPAA) and is governed by our Notice of Privacy Practices, which you receive as a patient and may request at any time. This website is not intended for sending health information. Please don't submit medical details through email or any form on this site unless the form is identified as secure.</p>
+      <h3>Information we collect</h3>
+      <ul>
+        <li><b>Information you give us,</b> such as your name, organization, email address, phone number and message when you contact us, apply for a job or ask about partnering.</li>
+        <li><b>Information collected automatically,</b> such as your browser type, device, pages visited, the site that referred you and the date and time of your visit. We may collect this through cookies and similar technologies.</li>
+      </ul>
+      <h3>How we use information</h3>
+      <ul>
+        <li>To respond to your questions, referrals, applications and partnership inquiries</li>
+        <li>To operate, secure and improve this website</li>
+        <li>To understand how visitors use the site, in aggregate</li>
+        <li>To comply with law and protect our rights</li>
+      </ul>
+      <p>We do not sell personal information, and we do not use information from this website for third-party advertising.</p>
+      <h3>How we share information</h3>
+      <p>We share information only with service providers who help us run the website and our business (such as hosting, email and analytics providers), who must protect it and use it only for the services they provide to us; when required by law or legal process; or in connection with a merger, acquisition or sale of assets, in which case this policy continues to apply to the information transferred.</p>
+      <h3>Cookies</h3>
+      <p>Cookies are small files stored on your device. You can set your browser to refuse cookies or to alert you when cookies are sent. Some parts of the site may not work properly without them.</p>
+      <h3>Data security</h3>
+      <p>We use reasonable administrative, technical and physical safeguards to protect information. No method of transmission over the internet is completely secure, so we cannot guarantee absolute security.</p>
+      <h3>Children</h3>
+      <p>This website is not directed to children under 13, and we do not knowingly collect information from them through the site.</p>
+      <h3>Links to other websites</h3>
+      <p>Our site may link to other websites, such as the Tennessee Bureau of Workers' Compensation. Their privacy practices are their own, and we encourage you to review their policies.</p>
+      <h3>Changes to this policy</h3>
+      <p>We may update this policy from time to time. The date at the top shows when it last changed.</p>
+      <h3>Contact us</h3>
+      <p>Questions about this policy can be sent through the <a href="#contact">contact form</a> on this site or by mail to Axocomp, 5651 Frist Blvd, Suite 416-B, Hermitage, TN 37076.</p>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="terms">
+  <section class="s">
+    <div class="wrap legal">
+      <span class="label">Legal</span>
+      <h2>Terms of use</h2>
+      <p class="upd">Last updated: November 16, 2026</p>
+      <p>These terms govern your use of axocomp.com, operated by Axocomp, PLLC (doing business as Axocomp Neurology) and Axocomp Management Services, LLC (collectively, "Axocomp"). By using the site, you agree to these terms. If you do not agree, please don't use the site.</p>
+      <h3>No medical advice</h3>
+      <p>The content on this site, including our guide to Tennessee workers' compensation, is general information. It is not medical advice, legal advice or a substitute for care from a qualified professional. Using this site does not create a physician-patient relationship. If you have a medical emergency, call 911.</p>
+      <h3>No legal advice</h3>
+      <p>Information about workers' compensation is a general summary and may not apply to your claim. For questions about your rights or benefits, contact the Tennessee Bureau of Workers' Compensation or an attorney.</p>
+      <h3>Use of the site</h3>
+      <p>You agree to use the site only for lawful purposes. You may not attempt to gain unauthorized access to the site or its systems, interfere with its operation, or use it to send unsolicited messages or harmful code.</p>
+      <h3>Intellectual property</h3>
+      <p>The Axocomp name, logo, badge, tagline and site content are owned by Axocomp and protected by law. You may view and print pages for personal or internal business use. Any other use requires our written permission.</p>
+      <h3>Communications</h3>
+      <p>Email and website messages are not secure channels for health information. Sending us a message does not create a patient or client relationship, and we cannot guarantee a response to unsolicited messages.</p>
+      <h3>Links to other websites</h3>
+      <p>Links to outside websites are provided for convenience. We are not responsible for their content or practices.</p>
+      <h3>Disclaimer of warranties</h3>
+      <p>The site is provided "as is." We work to keep information accurate and current but make no warranties about its completeness, accuracy or availability.</p>
+      <h3>Limitation of liability</h3>
+      <p>To the fullest extent permitted by law, Axocomp is not liable for any indirect, incidental or consequential damages arising from your use of the site.</p>
+      <h3>Governing law</h3>
+      <p>These terms are governed by the laws of the State of Tennessee, without regard to its conflict-of-law rules.</p>
+      <h3>Changes to these terms</h3>
+      <p>We may update these terms from time to time. Continued use of the site after a change means you accept the updated terms.</p>
+      <h3>Contact us</h3>
+      <p>Questions about these terms can be sent through the <a href="#contact">contact form</a> on this site.</p>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="accessibility">
+  <section class="s">
+    <div class="wrap legal">
+      <span class="label">Legal</span>
+      <h2>Accessibility statement</h2>
+      <p class="upd">Last updated: November 16, 2026</p>
+      <p>Axocomp is committed to making this website usable by everyone, including people with disabilities. Many of the people we serve are recovering from injuries that affect how they see, read, move or use a computer, and we design with that in mind.</p>
+      <h3>Our standard</h3>
+      <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. That standard covers text contrast, keyboard navigation, screen reader support, readable text sizes and clear structure.</p>
+      <h3>What we've done</h3>
+      <ul>
+        <li>Text and background colors chosen for strong contrast</li>
+        <li>Pages that can be navigated with a keyboard, with visible focus indicators</li>
+        <li>Headings and labels that work with screen readers</li>
+        <li>Layouts that adjust to phones, tablets and enlarged text</li>
+        <li>Plain-language content, especially in our guide for injured workers</li>
+      </ul>
+      <h3>Ongoing work</h3>
+      <p>Accessibility is an ongoing effort. We review the site as we add content, and we welcome feedback on anything that makes it harder to use.</p>
+      <h3>Need help or found a problem?</h3>
+      <p>If you have trouble using any part of this site, or need information in another format, contact us through the <a href="#contact">contact form</a> or call <span class="ph">(615) 000-0000</span>. Tell us the page and the problem, and we will work to provide the information you need.</p>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="sample-report">
+  <section class="s mist">
+    <div class="wrap">
+      <div class="head" style="margin-bottom:28px">
+        <span class="label">Sample report</span>
+        <h2>The Axocomp report</h2>
+        <p class="lede">Every Axocomp evaluation is written to the same standard, so adjusters, case managers and attorneys find the answers in the same place every time. Reports are available within 24 hours of the visit. This sample uses a fictional patient, employer and claim.</p>
+      </div>
+      <article class="report" aria-label="Sample Axocomp neurological evaluation report">
+        <div class="r-top">
+          <div class="r-brand"><span class="r-mark">axocomp</span><span>Workers' Comp &amp; Personal Injury Neurology</span></div>
+          <div class="r-stamp">Sample · Fictional patient</div>
+        </div>
+        <h3 class="r-title">Neurological evaluation and causation report</h3>
+        <table class="r-meta">
+          <tr><th>Injured worker</th><td>Jordan Sample</td><th>Date of evaluation</th><td>February 9, 2027</td></tr>
+          <tr><th>Employer</th><td>Example Distribution Co.</td><th>Date of injury</th><td>January 12, 2027</td></tr>
+          <tr><th>Carrier / TPA</th><td>Sample Mutual Insurance</td><th>Claim number</th><td>WC-000000</td></tr>
+          <tr><th>Adjuster</th><td>A. Adjuster</td><th>Axocomp role</th><td>Authorized treating physician (selected from panel, Form C-42)</td></tr>
+          <tr><th>Visit type</th><td>Follow-up visit with EMG/NCS</td><th>Examining physician</th><td>Axocomp neurologist</td></tr>
+        </table>
+
+        <div class="r-summary">
+          <h4>Summary of opinions</h4>
+          <dl>
+            <div><dt>Diagnosis</dt><dd>Left C6 radiculopathy due to a C5-C6 disc protrusion (M50.121), confirmed by EMG/NCS.</dd></div>
+            <div><dt>Causation</dt><dd>More likely than not, the January 12, 2027 work incident contributed more than 50% to the need for treatment.</dd></div>
+            <div><dt>Work status</dt><dd>Modified duty. No lifting over 15 lb with the left arm, no overhead work, no repetitive pushing or pulling.</dd></div>
+            <div><dt>MMI</dt><dd>Not at MMI. Expected in about 8 to 12 weeks if the patient improves with the plan below.</dd></div>
+            <div><dt>Next steps</dt><dd>Physical therapy (authorization requested), medication as below, follow-up in 4 weeks.</dd></div>
+          </dl>
+        </div>
+
+        <h4>Diagnosis</h4>
+        <p>Left C6 radiculopathy</p>
+
+        <h4>Job description</h4>
+        <p>Full-time warehouse associate. Lifts and carries cartons of 20 to 60 lb throughout the shift, with frequent reaching, overhead stacking and pallet jack use.</p>
+
+        <h4>History of injury</h4>
+        <p>This is a 41-year-old right-handed male warehouse associate presenting for evaluation of a work-related injury sustained on 01/12/2027. While lifting a 60 lb carton from a low shelf to a pallet, he experienced sudden sharp left-sided neck pain radiating into the left shoulder, lateral forearm, thumb and index finger. He reported the injury to his supervisor the same day. He continues to report numbness in the left thumb and index finger and weakness when lifting with the left arm. Denies prior neck injury, neck treatment, upper extremity symptoms or workers' compensation claims. Non-smoker.</p>
+        <p><b>Frequency of symptoms:</b> Daily, with intermittent numbness and weakness exacerbated by lifting with the left arm.</p>
+        <p><b>Duration of symptoms:</b> Neck and arm pain lasting several hours daily; numbness lasting 30–60 minutes per episode.</p>
+
+        <h4>Records reviewed</h4>
+        <div class="r-entries">
+          <p><b>01/12/2027 Employer first report of injury:</b> Left neck and arm pain while lifting a 60 lb carton from a low shelf. Injury reported to supervisor the same day.</p>
+          <p><b>01/12/2027 Urgent care evaluation:</b> Neck pain radiating into the left arm with tingling in the left thumb. Reduced cervical ROM; strength not formally assessed. Diagnosed with cervical strain. Ibuprofen and light duty prescribed. Employer physician panel provided.</p>
+          <p><b>01/12/2027 Cervical spine X-rays:</b> Normal alignment without fracture. Mild C5-C6 disc space narrowing.</p>
+          <p><b>01/13/2027 Form C-42:</b> Patient selected Axocomp Neurology as authorized treating physician from the employer panel.</p>
+          <p><b>01/15/2027 Axocomp initial evaluation:</b> Left biceps and wrist extensor weakness (4/5), diminished left biceps reflex and decreased sensation in the left thumb and index finger, documented as consistent with left C6 radiculopathy. Causation opinion documented. Modified duty assigned. Cervical MRI and EMG/NCS ordered.</p>
+          <p><b>02/03/2027 MRI cervical spine:</b> Left C5-C6 disc protrusion with moderate left foraminal narrowing contacting the exiting left C6 nerve root. Mild C5-C6 disc degeneration. No spinal cord compression.</p>
+        </div>
+
+        <h4>Diagnostic testing performed at Axocomp</h4>
+        <div class="r-entries">
+          <p><b>02/09/2027 EMG/NCS LUE:</b> Normal sensory and motor nerve conduction studies. Needle EMG demonstrated active denervation with fibrillations, positive sharp waves and reduced recruitment in the left biceps, brachioradialis, pronator teres and left C6 paraspinal muscles. Impression: Electrodiagnostic evidence of left C6 radiculopathy without evidence of carpal tunnel syndrome or other nerve entrapment.</p>
+          <p><b>02/09/2027 MRI cervical spine image review:</b> Images from 02/03/2027 personally reviewed. Left C5-C6 disc protrusion with left foraminal narrowing, documented as correlating with clinical and EMG findings. Mild C5-C6 disc degeneration without prior symptoms.</p>
+        </div>
+
+        <h4>Current treatment</h4>
+        <p>Ibuprofen as needed and light duty.</p>
+
+        <h4>Failed treatment</h4>
+        <p>Rest, ibuprofen and light duty have not resolved the left thumb and index finger numbness or left arm weakness.</p>
+
+        <h4>Examination</h4>
+        <p><b>Mental status and cranial nerves:</b> Normal. <b>Motor:</b> Left biceps and wrist extensors 4/5; otherwise 5/5. <b>Reflexes:</b> Left biceps and brachioradialis 1+; otherwise 2+ and symmetric. <b>Sensation:</b> Decreased pinprick over the left thumb and index finger. <b>Cervical spine:</b> Reduced left rotation; Spurling's test positive on the left, reproducing left arm pain. <b>Effort:</b> Consistent, without non-physiologic findings.</p>
+
+        <h4>Causation</h4>
+        <p>Considering all causes, it is my opinion, to a reasonable degree of medical certainty (more likely than not, as opposed to speculation or possibility), that the January 12, 2027 lifting incident contributed more than fifty percent (50%) in causing Mr. Sample's left C6 radiculopathy and his need for medical treatment. This opinion is based on: a specific incident identifiable by time and place; immediate onset of symptoms matching the C6 nerve root; no prior neck or arm symptoms or treatment; and objective EMG and MRI findings consistent with the mechanism of injury. The mild degenerative change at C5-C6 was present without symptoms before the incident and does not account for the acute radiculopathy. Today's EMG and MRI findings confirm the causation opinion given at the initial visit on January 15, 2027.</p>
+
+        <h4>Work status</h4>
+        <p><b>Modified duty, effective today until the next visit.</b> No lifting over 15 lb with the left arm. No overhead work. No repetitive pushing or pulling. May use the right arm without restriction.</p>
+
+        <h4>Treatment plan and expected timeline</h4>
+        <ul>
+          <li>Physical therapy, 2 to 3 times a week for 6 weeks (authorization requested)</li>
+          <li>Short course of oral steroid, then a nerve pain medication as needed</li>
+          <li>If not improving at follow-up: cervical epidural steroid injection referral</li>
+          <li>If weakness progresses: spine surgery consultation</li>
+          <li>Follow-up visit in 4 weeks with repeat strength testing</li>
+          <li>As authorized treating physician, Axocomp will submit and coordinate these referrals with the adjuster</li>
+        </ul>
+
+        <h4>Maximum medical improvement and impairment</h4>
+        <p>Not at MMI. MMI is expected in about 8 to 12 weeks if the patient improves with conservative care. At MMI, a permanent impairment rating will be assigned using the AMA Guides, 6th Edition, and reported on Tennessee Form C-30A.</p>
+
+        <div class="r-sign">
+          <p>I examined this patient personally and reviewed the records listed above. The opinions in this report are my own.</p>
+          <p><b>[Physician name], MD</b><br>Board-certified neurologist, Axocomp Neurology</p>
+        </div>
+      </article>
+      <p style="margin-top:20px;font-size:14px;color:var(--muted)">This sample is for illustration only. It does not describe a real person, employer or claim.</p>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="fm">axocomp</span>
+    <span>Workers' Comp &amp; Personal Injury Neurology · 5651 Frist Blvd, Suite 416-B, Hermitage, TN 37076</span>
+    <nav class="flinks" aria-label="Footer"><a href="#careers">Careers</a><a href="#partner">Partner with us</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#accessibility">Accessibility</a></nav>
+    <span>© 2026 Axocomp</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'),drawer=document.getElementById('drawer'),label=document.getElementById('menu-label');
+  function set(open){drawer.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);label.textContent=open?'Close':'Menu';}
+  btn.addEventListener('click',function(){set(!drawer.classList.contains('open'));});
+  drawer.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>1000)set(false);});
+})();
+</script>
+
+<script>
+(function(){
+  var views=[].slice.call(document.querySelectorAll('.view'));
+  var names=views.map(function(v){return v.getAttribute('data-view');});
+  var titles={home:'Axocomp',services:'Services · Axocomp',partners:'Referral partners · Axocomp','injured-workers':'Injured workers · Axocomp',model:'Why Axocomp',team:'The team · Axocomp',contact:'Contact · Axocomp',careers:'Careers · Axocomp',partner:'Partner with us · Axocomp',privacy:'Privacy policy · Axocomp',terms:'Terms of use · Axocomp',accessibility:'Accessibility · Axocomp','sample-report':'Sample report · Axocomp'};
+  function show(){
+    var h=(location.hash||'').replace('#','');
+    if(h==='top'||names.indexOf(h)<0)h='home';
+    views.forEach(function(v){v.classList.toggle('active',v.getAttribute('data-view')===h);});
+    document.querySelectorAll('.nav .links a,.drawer li a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h);});
+    document.title=titles[h]||'Axocomp';
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+
+<script>
+(function(){
+  var f=document.getElementById('cform'); if(!f) return;
+  var status=document.getElementById('cf-status');
+  var ENDPOINT=''; /* set to the form service URL at launch */
+  function clearErr(el){el.removeAttribute('aria-invalid');var e=el.parentNode.querySelector('.err');if(e)e.remove();}
+  f.addEventListener('input',function(e){if(e.target.matches('input,textarea'))clearErr(e.target);});
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); status.textContent=''; var first=null;
+    [].forEach.call(f.querySelectorAll('.crow input,.crow textarea'),function(el){
+      clearErr(el); var bad=el.required&&!el.value.trim();
+      if(!bad&&el.type==='email'&&el.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()))bad='Enter a valid email address.';
+      if(bad){el.setAttribute('aria-invalid','true');var m=document.createElement('span');m.className='err';m.textContent=bad===true?'This field is required.':bad;el.parentNode.appendChild(m);if(!first)first=el;}
+    });
+    if(first){first.focus();status.textContent='Please fill in the required fields.';return;}
+    if(!ENDPOINT){status.textContent='This form will be connected when the site goes live. Your message was not sent.';return;}
+    var data={};new FormData(f).forEach(function(v,k){data[k]=v;});
+    status.textContent='Sending…';
+    fetch(ENDPOINT,{method:'POST',body:JSON.stringify(data)})
+      .then(function(r){return r.json();}).then(function(j){if(!j||!j.ok)throw 0;f.reset();status.textContent='Thank you. Your message was sent, and we will be in touch soon.';})
+      .catch(function(){status.textContent='Your message could not be sent. Please try again or call our office.';});
+  });
+})();
+</script>
+</body>
+</html>
