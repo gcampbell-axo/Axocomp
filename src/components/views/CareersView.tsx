@@ -9,7 +9,7 @@ interface CareersViewProps {
 
 export function CareersView({ onNavigate }: CareersViewProps) {
   return (
-    <section className="bg-white py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-white py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader
           label="Careers"
@@ -21,7 +21,7 @@ export function CareersView({ onNavigate }: CareersViewProps) {
           {CAREERS_PILLARS.map((item) => (
             <div
               key={item.title}
-              className="bg-white border border-[#D9D9D4] border-t-4 border-t-[#E8590C] rounded-[6px] p-7 grid gap-3.5 content-start"
+              className="min-w-0 bg-white border border-[#D9D9D4] border-t-4 border-t-[#E8590C] rounded-[6px] p-7 grid gap-3.5 content-start"
             >
               <span className="font-display font-extrabold text-[14px] text-[#B5450A] tracking-[0.04em]">
                 {item.kicker}
@@ -41,7 +41,7 @@ export function CareersView({ onNavigate }: CareersViewProps) {
           {CAREERS_ROLES.map((role) => (
             <div
               key={role.title}
-              className="bg-[#F4F4F2] rounded-[6px] p-7 grid gap-2.5 content-start"
+              className="min-w-0 bg-[#F4F4F2] rounded-[6px] p-7 grid gap-2.5 content-start"
             >
               <h3 className="font-display font-extrabold text-[24px] text-[#13294B]">
                 {role.title}
@@ -52,7 +52,7 @@ export function CareersView({ onNavigate }: CareersViewProps) {
         </div>
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6">
-          <div className="bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-7 grid gap-3 content-start">
+          <div className="min-w-0 bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-7 grid gap-3 content-start">
             <h3 className="font-display font-extrabold text-[24px] text-[#13294B]">
               How to apply
             </h3>
@@ -62,7 +62,7 @@ export function CareersView({ onNavigate }: CareersViewProps) {
               with how to send your r&eacute;sum&eacute; or CV.
             </p>
           </div>
-          <div className="bg-[#13294B] text-[#C9D2DF] rounded-[6px] p-7 grid gap-3 content-start">
+          <div className="min-w-0 bg-[#13294B] text-[#C9D2DF] rounded-[6px] p-7 grid gap-3 content-start">
             <h3 className="font-display font-extrabold text-[24px] text-white">
               Apply
             </h3>

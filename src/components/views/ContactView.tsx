@@ -97,7 +97,7 @@ export function ContactView({ prefill }: ContactViewProps) {
   };
 
   return (
-    <section className="bg-[#13294B] text-[#C9D2DF] py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-[#13294B] text-[#C9D2DF] py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader
           dark
@@ -106,7 +106,7 @@ export function ContactView({ prefill }: ContactViewProps) {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div className="bg-white/[0.06] border border-white/12 rounded-[6px] p-[22px] grid gap-1.5 content-start">
+          <div className="min-w-0 bg-white/[0.06] border border-white/12 rounded-[6px] p-[22px] grid gap-1.5 content-start">
             <span className="text-[13px] font-semibold tracking-[0.06em] uppercase text-[#AEB9C9]">
               Phone
             </span>
@@ -118,7 +118,7 @@ export function ContactView({ prefill }: ContactViewProps) {
             </a>
           </div>
 
-          <div className="bg-white/[0.06] border border-white/12 rounded-[6px] p-[22px] grid gap-1.5 content-start">
+          <div className="min-w-0 bg-white/[0.06] border border-white/12 rounded-[6px] p-[22px] grid gap-1.5 content-start">
             <span className="text-[13px] font-semibold tracking-[0.06em] uppercase text-[#AEB9C9]">
               Referral fax
             </span>
@@ -127,7 +127,7 @@ export function ContactView({ prefill }: ContactViewProps) {
             </span>
           </div>
 
-          <div className="bg-white/[0.06] border border-white/12 rounded-[6px] p-[22px] grid gap-1.5 content-start">
+          <div className="min-w-0 bg-white/[0.06] border border-white/12 rounded-[6px] p-[22px] grid gap-1.5 content-start">
             <span className="text-[13px] font-semibold tracking-[0.06em] uppercase text-[#AEB9C9]">
               Clinic and corporate office
             </span>
@@ -142,7 +142,7 @@ export function ContactView({ prefill }: ContactViewProps) {
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="mt-10 bg-white text-[#2A3850] rounded-[6px] p-[clamp(22px,3vw,36px)] max-w-[880px] grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4"
+          className="relative overflow-hidden mt-10 bg-white text-[#2A3850] rounded-[6px] p-[clamp(22px,3vw,36px)] max-w-[880px] grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4"
         >
           <h3 className="sm:col-span-2 font-display font-extrabold text-[26px] text-[#13294B]">
             Send us a message

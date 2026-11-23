@@ -14,7 +14,7 @@ export function ServicesView({ onNavigate }: ServicesViewProps) {
   };
 
   return (
-    <section className="bg-[#F4F4F2] py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-[#F4F4F2] py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader
           label="Services"
@@ -25,7 +25,7 @@ export function ServicesView({ onNavigate }: ServicesViewProps) {
           {SERVICES_LIST.map((svc) => (
             <div
               key={svc.num}
-              className="bg-white border border-[#D9D9D4] border-t-4 border-t-[#E8590C] rounded-[6px] p-7 grid gap-3.5 content-start"
+              className="min-w-0 bg-white border border-[#D9D9D4] border-t-4 border-t-[#E8590C] rounded-[6px] p-7 grid gap-3.5 content-start"
             >
               <span className="font-display font-extrabold text-[14px] text-[#B5450A] tracking-[0.04em] tabular-nums">
                 {svc.num}

@@ -14,7 +14,7 @@ export function LegalView({ mode, onNavigate }: LegalViewProps) {
   };
 
   return (
-    <section className="bg-white py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-white py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <div className="max-w-[820px] grid gap-3.5 text-[17px] leading-[1.6] text-[#2A3850]">
           <span className="inline-flex items-center gap-2.5 text-[13px] font-semibold tracking-[0.06em] uppercase text-[#5E6B7E]">

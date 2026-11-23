@@ -9,7 +9,7 @@ interface ModelViewProps {
 
 export function ModelView({ onNavigate: _onNavigate }: ModelViewProps) {
   return (
-    <section className="bg-[#13294B] text-[#C9D2DF] py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-[#13294B] text-[#C9D2DF] py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader
           dark
@@ -22,7 +22,7 @@ export function ModelView({ onNavigate: _onNavigate }: ModelViewProps) {
           {MODEL_PILLARS.map((pillar) => (
             <div
               key={pillar.title}
-              className="border-t-[3px] border-t-[#F1D97B] pt-5 grid gap-2 content-start"
+              className="min-w-0 border-t-[3px] border-t-[#F1D97B] pt-5 grid gap-2 content-start"
             >
               <h3 className="font-display font-extrabold text-[22px] text-white">
                 {pillar.title}

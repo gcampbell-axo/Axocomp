@@ -9,7 +9,7 @@ interface PartnerWithUsViewProps {
 
 export function PartnerWithUsView({ onNavigate }: PartnerWithUsViewProps) {
   return (
-    <section className="bg-white py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-white py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader
           label="Partner with us"
@@ -21,7 +21,7 @@ export function PartnerWithUsView({ onNavigate }: PartnerWithUsViewProps) {
           {PARTNER_TYPES.map((item) => (
             <div
               key={item.title}
-              className="bg-[#F4F4F2] rounded-[6px] p-7 grid gap-2.5 content-start"
+              className="min-w-0 bg-[#F4F4F2] rounded-[6px] p-7 grid gap-2.5 content-start"
             >
               <h3 className="font-display font-extrabold text-[24px] text-[#13294B]">
                 {item.title}
@@ -38,21 +38,21 @@ export function PartnerWithUsView({ onNavigate }: PartnerWithUsViewProps) {
           {PARTNER_STEPS.map((step) => (
             <li
               key={step.num}
-              className="bg-white border border-[#D9D9D4] rounded-[6px] p-[22px] grid grid-cols-[36px_1fr] lg:grid-cols-1 gap-x-4 gap-y-2.5 content-start"
+              className="min-w-0 bg-white border border-[#D9D9D4] rounded-[6px] p-[22px] grid grid-cols-[36px_1fr] lg:grid-cols-1 gap-x-4 gap-y-2.5 content-start"
             >
               <span className="row-span-2 lg:row-span-1 w-9 h-9 rounded-full bg-[#F1D97B] text-[#13294B] grid place-items-center font-display font-extrabold text-[15px] tabular-nums">
                 {step.num}
               </span>
-              <h3 className="font-display font-extrabold text-[20px] text-[#13294B]">
+              <h3 className="min-w-0 font-display font-extrabold text-[20px] text-[#13294B]">
                 {step.title}
               </h3>
-              <p className="text-[15px] text-[#5E6B7E]">{step.body}</p>
+              <p className="min-w-0 text-[15px] text-[#5E6B7E]">{step.body}</p>
             </li>
           ))}
         </ol>
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6">
-          <div className="bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-7 grid gap-3 content-start">
+          <div className="min-w-0 bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-7 grid gap-3 content-start">
             <h3 className="font-display font-extrabold text-[24px] text-[#13294B]">
               Start the conversation
             </h3>
@@ -62,7 +62,7 @@ export function PartnerWithUsView({ onNavigate }: PartnerWithUsViewProps) {
               will follow up.
             </p>
           </div>
-          <div className="bg-[#13294B] text-[#C9D2DF] rounded-[6px] p-7 grid gap-3 content-start">
+          <div className="min-w-0 bg-[#13294B] text-[#C9D2DF] rounded-[6px] p-7 grid gap-3 content-start">
             <h3 className="font-display font-extrabold text-[24px] text-white">
               Get in touch
             </h3>

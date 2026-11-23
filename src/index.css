@@ -23,6 +23,8 @@
     color: #2A3850;
     background-color: #FFFFFF;
     color-scheme: light;
+    overflow-x: clip;
+    height: auto;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -46,6 +48,8 @@
     font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+    height: auto;
   }
 
   h1,
@@ -58,6 +62,13 @@
     letter-spacing: -0.02em;
     line-height: 1.08;
     text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  p,
+  dd,
+  li {
+    overflow-wrap: break-word;
   }
 
   a:focus-visible,

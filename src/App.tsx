@@ -67,14 +67,48 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    document.title = VIEW_TITLES[activeView] || VIEW_TITLES.home;
+    const pageTitle = VIEW_TITLES[activeView] || VIEW_TITLES.home;
+    document.title = pageTitle;
+
+    const origin = window.location.origin;
+    const canonicalUrl = origin + window.location.pathname;
+    const ogImageUrl = `${origin}/og-image.png`;
+
+    const setMeta = (attr: 'name' | 'property', key: string, content: string) => {
+      const el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+      if (el) {
+        el.setAttribute('content', content);
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute(attr, key);
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('property', 'og:url', canonicalUrl);
+    setMeta('property', 'og:title', pageTitle);
+    setMeta('property', 'og:image', ogImageUrl);
+    setMeta('name', 'twitter:title', pageTitle);
+    setMeta('name', 'twitter:image', ogImageUrl);
+
+    let canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalUrl);
   }, [activeView]);
 
   return (
-    <div id="top" className="min-h-screen flex flex-col bg-white text-[#1C1C1C]">
+    <div
+      id="top"
+      className="md:min-h-dvh flex flex-col overflow-x-clip w-full bg-white text-[#1C1C1C]"
+    >
       <Header activeView={activeView} onNavigate={navigate} />
 
-      <main className="flex-1">
+      <main className="flex-1 flex flex-col min-w-0">
         {activeView === 'home' && <HomeView onNavigate={navigate} />}
         {activeView === 'services' && <ServicesView onNavigate={navigate} />}
         {activeView === 'partners' && <PartnersView onNavigate={navigate} />}

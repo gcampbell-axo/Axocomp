@@ -23,7 +23,7 @@ export function SampleReportView() {
   };
 
   return (
-    <section className="bg-[#F4F4F2] py-16 sm:py-24">
+    <section className="flex-1 bg-[#F4F4F2] py-12 sm:py-24">
       <div className="max-w-[1180px] mx-auto px-4 sm:px-8">
         <div className="no-print flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
           <SectionHeader
@@ -64,7 +64,7 @@ export function SampleReportView() {
 
         <article
           aria-label="Sample Axocomp neurological evaluation report"
-          className="bg-white text-black border border-black max-w-[860px] p-6 sm:p-12 grid gap-3 font-sans text-[15px] leading-[1.6]"
+          className="min-w-0 overflow-hidden bg-white text-black border border-black max-w-[860px] p-6 sm:p-12 grid gap-3 font-sans text-[15px] leading-[1.6]"
         >
           {/* Report Header */}
           <div className="-mt-6 sm:-mt-12 flex justify-between items-start gap-4 flex-wrap border-b-[3px] border-black pb-3.5">
@@ -84,7 +84,7 @@ export function SampleReportView() {
           </h3>
 
           {/* Meta Table */}
-          <div className="overflow-x-auto">
+          <div className="min-w-0 w-full overflow-x-auto">
             <table className="w-full border-collapse text-[14px] border border-black">
               <tbody>
                 <tr className="border-b border-black">

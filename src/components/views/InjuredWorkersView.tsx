@@ -15,7 +15,7 @@ interface InjuredWorkersViewProps {
 
 export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
   return (
-    <section className="bg-white py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-white py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader
           label="For injured workers"
@@ -27,7 +27,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
           {WORKER_BASICS.map((item) => (
             <div
               key={item.title}
-              className="bg-white border border-[#D9D9D4] rounded-[6px] p-7 grid gap-3 content-start"
+              className="min-w-0 bg-white border border-[#D9D9D4] rounded-[6px] p-7 grid gap-3 content-start"
             >
               <h3 className="font-display font-extrabold text-[24px] text-[#13294B]">
                 {item.title}
@@ -47,7 +47,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
                 {step.num}
               </span>
 
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-display font-extrabold text-[22px] text-[#13294B]">
                   {step.title}
                 </h3>
@@ -56,7 +56,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
                 </span>
               </div>
 
-              <div className="col-start-2 md:col-start-3 space-y-2.5">
+              <div className="col-start-2 md:col-start-3 min-w-0 space-y-2.5">
                 {step.paragraphs.map((p) => (
                   <p key={p} className="text-[16px] text-[#2A3850]">
                     {p}
@@ -74,7 +74,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
           {WORKER_FRUSTRATIONS.map((item) => (
             <div
               key={item.question}
-              className="bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-6 grid gap-2 content-start"
+              className="min-w-0 bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-6 grid gap-2 content-start"
             >
               <h4 className="font-display font-extrabold text-[19px] text-[#13294B]">
                 {item.question}
@@ -91,7 +91,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
           {WORKER_GLOSSARY.map((entry, idx) => (
             <div
               key={entry.term}
-              className={`py-[18px] pb-5 border-b border-[#D9D9D4] grid gap-1 content-start sm:pr-[18px] ${
+              className={`min-w-0 py-[18px] pb-5 border-b border-[#D9D9D4] grid gap-1 content-start sm:pr-[18px] ${
                 idx % 2 === 1 ? 'sm:border-l sm:pl-[18px]' : ''
               } ${
                 idx % 4 !== 0
@@ -110,7 +110,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
         </dl>
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6">
-          <div className="bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-7 grid gap-3 content-start">
+          <div className="min-w-0 bg-[#FAF2D1] border border-[#EADBA0] rounded-[6px] p-7 grid gap-3 content-start">
             <h3 className="font-display font-extrabold text-[24px] text-[#13294B]">
               Having trouble with your claim?
             </h3>
@@ -126,7 +126,7 @@ export function InjuredWorkersView({ onNavigate }: InjuredWorkersViewProps) {
             </p>
           </div>
 
-          <div className="bg-[#13294B] text-[#C9D2DF] rounded-[6px] p-7 grid gap-3 content-start">
+          <div className="min-w-0 bg-[#13294B] text-[#C9D2DF] rounded-[6px] p-7 grid gap-3 content-start">
             <h3 className="font-display font-extrabold text-[24px] text-white">
               TN workers&rsquo; comp ombudsman
             </h3>

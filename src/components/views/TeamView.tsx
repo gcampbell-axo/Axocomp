@@ -9,7 +9,7 @@ interface TeamViewProps {
 
 export function TeamView({ onNavigate: _onNavigate }: TeamViewProps) {
   return (
-    <section className="bg-white py-[clamp(64px,8vw,112px)]">
+    <section className="flex-1 bg-white py-[clamp(48px,8vw,112px)]">
       <div className="max-w-[1180px] mx-auto px-[clamp(18px,4vw,40px)]">
         <SectionHeader label="The team" title="Leadership" />
 
@@ -17,7 +17,7 @@ export function TeamView({ onNavigate: _onNavigate }: TeamViewProps) {
           {TEAM_MEMBERS.map((member) => (
             <div
               key={member.name}
-              className="border border-[#D9D9D4] border-t-4 border-t-[#E8590C] rounded-[6px] p-6 grid gap-1.5 content-start"
+              className="min-w-0 border border-[#D9D9D4] border-t-4 border-t-[#E8590C] rounded-[6px] p-6 grid gap-1.5 content-start"
             >
               <h3 className="font-display font-extrabold text-[21px] text-[#13294B]">
                 {member.name}

@@ -406,13 +406,13 @@ export const TEAM_MEMBERS = [
   },
   {
     name: 'Ernie V. Campbell',
-    title: 'HR & Operations Director',
+    title: 'Director, HR & Operations',
     roles: [],
     org: 'Axocomp Management Services, LLC',
   },
   {
     name: 'Dawson Toungette',
-    title: 'Business Development Manager',
+    title: 'Director, Business Development',
     roles: [],
     org: 'Axocomp Management Services, LLC',
   },
