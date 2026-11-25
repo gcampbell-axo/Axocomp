@@ -399,20 +399,8 @@ export const TEAM_MEMBERS = [
     org: 'Axocomp Management Services, LLC',
   },
   {
-    name: 'William O. Horton II',
-    title: 'Finance Director',
-    roles: [],
-    org: 'Axocomp Management Services, LLC',
-  },
-  {
     name: 'Ernie V. Campbell',
     title: 'Director, HR & Operations',
-    roles: [],
-    org: 'Axocomp Management Services, LLC',
-  },
-  {
-    name: 'Dawson Toungette',
-    title: 'Director, Business Development',
     roles: [],
     org: 'Axocomp Management Services, LLC',
   },
